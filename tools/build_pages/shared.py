@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import html
+import os
 import shutil
 from pathlib import Path
+from urllib.parse import urlencode
 
 
 def write(path: Path, content: str) -> None:
@@ -41,6 +43,32 @@ def nav() -> str:
 
 def brandmark(*, site_name: str) -> str:
     return f"""<div class='brandwrap'><img class='logo' src='/assets/brand/ndz-mark-48.png' width='36' height='36' alt='' aria-hidden='true' decoding='async' /><span class='brandtext'>{site_name}</span></div>"""
+
+
+AFFILIATE_INLINE_DISCLOSURE = "<p class='disclosure' style='margin:0 0 10px 0'><strong>Disclosure:</strong> As an Amazon Associate, this site may earn from qualifying purchases.</p>"
+
+
+def amazon_search_link(query: str, *, tag: str | None = None) -> str:
+    amazon_tag = tag or os.environ.get("AMAZON_TAG", "nodeadzones-20")
+    params = {"k": query}
+    if amazon_tag:
+        params["tag"] = amazon_tag
+    return "https://www.amazon.com/s?" + urlencode(params)
+
+
+def product_card(*, title: str, best_for: str, why: list[str], caution: str | None, query: str, button_label: str = "Check on Amazon ↗") -> str:
+    bullets = "".join(f"<li>{html.escape(item)}</li>" for item in why)
+    caution_html = f"<p class='muted' style='margin:10px 0 0 0'><strong>Watch out:</strong> {html.escape(caution)}</p>" if caution else ""
+    href = amazon_search_link(query)
+    return f"""
+    <section class='card'>
+      <h3 style='margin:0 0 6px 0'>{html.escape(title)}</h3>
+      <p style='margin:0 0 8px 0'><strong>Best for:</strong> {html.escape(best_for)}</p>
+      <ul style='margin:0 0 10px 18px'>{bullets}</ul>
+      {caution_html}
+      <p style='margin:12px 0 0 0'><a class='btn' href='{href}' rel='sponsored nofollow'>{html.escape(button_label)}</a></p>
+    </section>
+    """
 
 
 def shell(title: str, body: str, *, path: str, description: str | None, BASE: str, SITE_NAME: str) -> str:
@@ -90,6 +118,7 @@ def shell(title: str, body: str, *, path: str, description: str | None, BASE: st
     .card {{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; }}
     .section {{ margin-top:26px; }}
     .muted,.lede {{ color:var(--muted); }}
+    .disclosure {{ font-size:.95rem; color:var(--muted); }}
     article {{ max-width: 820px; }}
     h1,h2,h3 {{ line-height:1.2; }}
     footer {{ margin-top:42px; padding:24px 0 10px; color:var(--muted); font-size:.95rem; }}
