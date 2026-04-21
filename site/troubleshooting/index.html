@@ -4,16 +4,17 @@
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>Troubleshooting | Fix My Smart Home Now</title>
-  <meta name='description' content='Symptom-first troubleshooting for pairing failures, disconnects, latency, and offline devices.' />
+  <meta name='description' content='Symptom-first fixes for pairing failures, disconnects, and ghost offline states.' />
   <link rel='canonical' href='https://fixmysmarthomenow.com/troubleshooting/' />
+  <link rel='icon' href='/assets/favicon.svg' type='image/svg+xml' />
   <style>
     :root { --bg:#f8fafc; --text:#111827; --muted:#475569; --card:#ffffff; --border:#e5e7eb; --brand:#0f766e; --brand-dark:#0f172a; --brand-soft:#ccfbf1; --radius:18px; }
     * { box-sizing: border-box; }
-    body { font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif; margin:0; color:var(--text); background:var(--bg); }
+    body { font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif; margin:0; color:var(--text); background:var(--bg); line-height:1.6; }
     a { color:#0f766e; }
     .wrap { max-width: 1100px; margin: 0 auto; padding: 24px; }
     header { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:10px 0 20px; }
-    .brand { font-weight:800; color:var(--brand-dark); text-decoration:none; font-size:1.1rem; }
+    .brandmark img { height:44px; width:auto; display:block; }
     nav { display:flex; gap:14px; flex-wrap:wrap; }
     nav a { text-decoration:none; color:var(--muted); font-weight:600; }
     .hero { background: linear-gradient(135deg, var(--brand-dark), #155e75); color:white; padding: 58px 28px; border-radius: calc(var(--radius) + 6px); }
@@ -23,14 +24,16 @@
     .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-top:20px; }
     .card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; }
     .section { margin-top:26px; }
-    .muted { color:var(--muted); }
+    .muted,.lede { color:var(--muted); }
+    article { max-width: 820px; }
+    h1,h2,h3 { line-height:1.2; }
     footer { margin-top:42px; padding:24px 0 10px; color:var(--muted); font-size:.95rem; }
   </style>
 </head>
 <body>
   <div class='wrap'>
     <header>
-      <a class='brand' href='/'>Fix My Smart Home Now</a>
+      <a class='brandmark' href='/' aria-label='Fix My Smart Home Now'><img src='/assets/logo.svg' alt='Fix My Smart Home Now' /></a>
       <nav>
         <a href='/start/'>Start</a>
         <a href='/protocols/'>Protocols</a>
@@ -41,7 +44,13 @@
         <a href='/products/'>Products</a>
       </nav>
     </header>
-    <h1 style="margin-top:0">Troubleshooting</h1><p class='muted'>Symptom-first troubleshooting for pairing failures, disconnects, latency, and offline devices.</p><div class="card"><ul><li><a href="#">Why won’t my smart plug connect to Wi-Fi?</a></li><li><a href="#">Smart lights keep disconnecting</a></li><li><a href="#">Device says offline but Wi-Fi is fine</a></li></ul></div>
+    <h1 style='margin-top:0'>Troubleshooting</h1>
+        <p class='lede'>Use the shortest symptom-first path instead of reading 20 forum threads.</p>
+        <div class='grid'>
+          <div class='card'><h3 style='margin-top:0'><a href='/why-wont-my-smart-plug-connect-to-wifi/'>Why won't my smart plug connect to Wi-Fi?</a></h3><p class='muted'>Fastest fixes for pairing and setup failures.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/smart-lights-keep-disconnecting/'>Smart lights keep disconnecting</a></h3><p class='muted'>Protocol and topology problems that look like bulb problems.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Smart home devices keep going offline</a></h3><p class='muted'>Find the shared failure layer instead of swapping random devices.</p></div>
+        </div>
     <footer>
       <p>Fix My Smart Home Now helps people build smart homes that actually stay connected.</p>
     </footer>

@@ -3,9 +3,9 @@
 <head>
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>Wi-Fi load | Fix My Smart Home Now</title>
-  <meta name='description' content='Router stress, 2.4 GHz policy, and how Wi-Fi becomes the hidden problem layer in smart homes.' />
-  <link rel='canonical' href='https://fixmysmarthomenow.com/wifi-load/' />
+  <title>Smart home devices keep going offline | Fix My Smart Home Now</title>
+  <meta name='description' content='A practical checklist for smart home devices that randomly go offline and come back on their own.' />
+  <link rel='canonical' href='https://fixmysmarthomenow.com/troubleshooting/smart-home-devices-keep-going-offline/' />
   <link rel='icon' href='/assets/favicon.svg' type='image/svg+xml' />
   <style>
     :root { --bg:#f8fafc; --text:#111827; --muted:#475569; --card:#ffffff; --border:#e5e7eb; --brand:#0f766e; --brand-dark:#0f172a; --brand-soft:#ccfbf1; --radius:18px; }
@@ -44,11 +44,22 @@
         <a href='/products/'>Products</a>
       </nav>
     </header>
-    <h1 style='margin-top:0'>Wi-Fi load</h1>
-        <div class='grid'>
-          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></h3><p class='muted'>How to tell if your network is the bottleneck.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></h3><p class='muted'>Basic Wi-Fi policy choices that prevent a lot of dumb failures.</p></div>
-        </div>
+    <article><p class='muted' style='font-weight:700; margin-bottom:8px'>Troubleshooting</p>
+        <p>If devices keep going offline, do not start by replacing everything. Start by finding the common layer: Wi-Fi, hub, protocol mesh, power, or cloud dependency.</p>
+        <h2>Find the pattern</h2>
+        <ul>
+          <li>Only Wi-Fi devices failing? Check your router and 2.4 GHz setup.</li>
+          <li>Only Zigbee devices failing? Check repeater depth and channel overlap.</li>
+          <li>Only one app/ecosystem failing? Check cloud status and hub health.</li>
+          <li>Only one room failing? It is probably coverage or mesh depth.</li>
+        </ul>
+        <h2>Reliable next steps</h2>
+        <ul>
+          <li>Rebooting is fine once. If it keeps returning, fix the root cause.</li>
+          <li>Segment IoT Wi-Fi if your main SSID is noisy or overloaded.</li>
+          <li>Reduce dependency on cheap Wi-Fi devices when better protocol options exist.</li>
+        </ul>
+        </article>
     <footer>
       <p>Fix My Smart Home Now helps people build smart homes that actually stay connected.</p>
     </footer>

@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-"""Minimal regression guard scaffold for Fix My Smart Home Now."""
-
 from __future__ import annotations
 
 from pathlib import Path
@@ -8,19 +6,25 @@ from pathlib import Path
 SITE = Path(__file__).resolve().parents[1] / "site"
 
 KEY_PAGES = [
-    {"path": "/", "file": SITE / "index.html"},
-    {"path": "/start/", "file": SITE / "start" / "index.html"},
-    {"path": "/protocols/", "file": SITE / "protocols" / "index.html"},
-    {"path": "/troubleshooting/", "file": SITE / "troubleshooting" / "index.html"},
-    {"path": "/hubs/", "file": SITE / "hubs" / "index.html"},
-    {"path": "/wifi-load/", "file": SITE / "wifi-load" / "index.html"},
-    {"path": "/devices/", "file": SITE / "devices" / "index.html"},
-    {"path": "/products/", "file": SITE / "products" / "index.html"},
+    "/",
+    "/start/",
+    "/protocols/",
+    "/troubleshooting/",
+    "/hubs/",
+    "/wifi-load/",
+    "/devices/",
+    "/products/",
+    "/why-wont-my-smart-plug-connect-to-wifi/",
+    "/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/",
 ]
 
 
+def file_for(path: str) -> Path:
+    return SITE / ("index.html" if path == "/" else path.strip("/") + "/index.html")
+
+
 def main() -> int:
-    missing = [spec["path"] for spec in KEY_PAGES if not Path(spec["file"]).exists()]
+    missing = [path for path in KEY_PAGES if not file_for(path).exists()]
     if missing:
         raise SystemExit(f"Regression guard failed: missing key pages: {', '.join(missing)}")
     print("Regression guard passed.")

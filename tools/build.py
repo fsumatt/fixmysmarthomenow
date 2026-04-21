@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import html
 import shutil
 from pathlib import Path
 
@@ -11,31 +12,360 @@ OUT = ROOT / "site"
 BASE = "https://fixmysmarthomenow.com"
 SITE_NAME = "Fix My Smart Home Now"
 
+PAGES = {
+    "/why-wont-my-smart-plug-connect-to-wifi/": {
+        "title": "Why won't my smart plug connect to Wi-Fi?",
+        "description": "The fastest way to fix smart plugs that refuse to connect, fail setup, or drop right after pairing.",
+        "section": "Troubleshooting",
+        "body": """
+        <p><strong>Most smart plugs fail for boring reasons:</strong> 5 GHz-only setup, weak 2.4 GHz signal, WPA3 quirks, captive onboarding bugs, or too many retries without a clean reset.</p>
+        <h2>Check these first</h2>
+        <ul>
+          <li>Use the phone on the same 2.4 GHz network the plug will join.</li>
+          <li>Temporarily disable band steering or create a dedicated 2.4 GHz IoT SSID.</li>
+          <li>Move the plug close to the router for setup, then move it back later.</li>
+          <li>Fully reset the plug before trying again.</li>
+        </ul>
+        <h2>Common causes</h2>
+        <ul>
+          <li><strong>5 GHz mismatch:</strong> many plugs still only support 2.4 GHz.</li>
+          <li><strong>WPA3 or mixed security weirdness:</strong> some cheaper devices behave better on WPA2/WPA2-WPA3 mixed mode.</li>
+          <li><strong>Weak onboarding signal:</strong> setup succeeds only when the device is near the router.</li>
+          <li><strong>Too many saved credentials:</strong> repeated failed attempts can leave the plug in a weird half-paired state.</li>
+        </ul>
+        <h2>Best next moves</h2>
+        <ul>
+          <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></li>
+          <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Smart home devices keep going offline</a></li>
+          <li><a href='/products/reliable-smart-plugs/'>Reliable smart plugs</a></li>
+        </ul>
+        """,
+    },
+    "/smart-lights-keep-disconnecting/": {
+        "title": "Smart lights keep disconnecting",
+        "description": "How to fix smart bulbs and lights that randomly go offline, lag, or stop responding.",
+        "section": "Troubleshooting",
+        "body": """
+        <p>If smart lights keep dropping, the problem is usually <strong>protocol fit</strong>, <strong>mesh depth</strong>, or <strong>bad power habits</strong>, not just the bulb itself.</p>
+        <h2>Fast diagnosis</h2>
+        <ul>
+          <li><strong>Wi-Fi bulbs:</strong> check RSSI, channel congestion, and 2.4 GHz stability.</li>
+          <li><strong>Zigbee bulbs:</strong> check that you have enough mains-powered repeaters and that the bulbs are not on flaky dimmers.</li>
+          <li><strong>Thread/Matter bulbs:</strong> confirm the border router and controlling app are stable.</li>
+        </ul>
+        <h2>Most common fixes</h2>
+        <ul>
+          <li>Stop cutting power at the wall if the bulb expects constant power.</li>
+          <li>Use smart switches for switched circuits instead of smart bulbs where possible.</li>
+          <li>For Zigbee, add one or two solid repeater devices before blaming the bulbs.</li>
+          <li>For Wi-Fi bulbs, move cheap always-on IoT gear off your main SSID if the network is overloaded.</li>
+        </ul>
+        <h2>Related pages</h2>
+        <ul>
+          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Zigbee vs Z-Wave vs Thread vs Matter</a></li>
+          <li><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></li>
+        </ul>
+        """,
+    },
+    "/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/": {
+        "title": "Zigbee vs Z-Wave vs Thread vs Matter",
+        "description": "Which smart home protocol is actually best for reliability, mixed ecosystems, and future flexibility.",
+        "section": "Protocols",
+        "body": """
+        <p><strong>The short version:</strong> Zigbee is still the best overall workhorse for large device counts, Z-Wave is strong for locks/sensors in the right ecosystem, Thread is promising but still uneven, and Matter is a transport layer story more than a magic reliability fix.</p>
+        <h2>Use Zigbee when</h2>
+        <ul><li>You want lots of inexpensive sensors/plugs and a strong mesh.</li><li>You can commit to a good hub/coordinator.</li></ul>
+        <h2>Use Z-Wave when</h2>
+        <ul><li>You care about locks, security devices, and a more curated device ecosystem.</li><li>You are okay with slightly higher device cost.</li></ul>
+        <h2>Use Thread when</h2>
+        <ul><li>You already have strong Apple/Google/Nest border router support.</li><li>You want modern low-power networking, but you accept ecosystem rough edges.</li></ul>
+        <h2>What Matter actually changes</h2>
+        <p>Matter helps interoperability and onboarding, but it does <strong>not</strong> automatically fix weak Wi-Fi, poor border routers, or bad device firmware.</p>
+        <h2>Best next clicks</h2>
+        <ul>
+          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>
+          <li><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></li>
+        </ul>
+        """,
+    },
+    "/hubs/best-hub-for-mixed-smart-home/": {
+        "title": "Best hub for mixed smart home",
+        "description": "How to choose the best hub when you have mixed devices, multiple protocols, and want reliability first.",
+        "section": "Hubs",
+        "body": """
+        <p>For a mixed smart home, the best hub is the one that reduces protocol sprawl and keeps automations local enough to survive cloud weirdness.</p>
+        <h2>What matters most</h2>
+        <ul>
+          <li>Strong Zigbee/Z-Wave support</li>
+          <li>Good local automation options</li>
+          <li>Stable integrations for your voice assistant and major ecosystems</li>
+          <li>Enough maturity that you are not beta-testing your house</li>
+        </ul>
+        <h2>Good hub patterns</h2>
+        <ul>
+          <li><strong>One main hub + a few bridges:</strong> usually the cleanest for mixed homes.</li>
+          <li><strong>All-Wi-Fi + voice assistant only:</strong> simplest upfront, weakest long-term reliability.</li>
+          <li><strong>Home Assistant-first:</strong> most flexible, but higher setup overhead.</li>
+        </ul>
+        <h2>Related pages</h2>
+        <ul>
+          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Protocol comparison</a></li>
+          <li><a href='/products/reliable-smart-home-hubs/'>Reliable smart home hubs</a></li>
+        </ul>
+        """,
+    },
+    "/wifi-load/how-many-devices-can-wifi-handle-smart-home/": {
+        "title": "How many devices can Wi-Fi handle for a smart home?",
+        "description": "How to tell whether your router is overloaded and what to change before blaming every smart device.",
+        "section": "Wi-Fi load",
+        "body": """
+        <p><strong>There is no single device limit.</strong> What matters is router quality, client behavior, airtime usage, 2.4 GHz congestion, and whether your smart home is built from chatty Wi-Fi gadgets or better protocols.</p>
+        <h2>Warning signs of overload</h2>
+        <ul>
+          <li>Random offline devices with no clear pattern</li>
+          <li>Slow app control but normal internet speed tests</li>
+          <li>2.4 GHz devices failing more than phones/laptops</li>
+          <li>Routers that need frequent reboots</li>
+        </ul>
+        <h2>Best fixes</h2>
+        <ul>
+          <li>Move cheap IoT gear to a dedicated 2.4 GHz SSID.</li>
+          <li>Reduce channel overlap and band-steering weirdness.</li>
+          <li>Prefer Zigbee/Z-Wave/Thread for sensors and simple always-on devices.</li>
+          <li>Upgrade weak ISP routers before buying random repeaters.</li>
+        </ul>
+        <h2>Related pages</h2>
+        <ul>
+          <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></li>
+          <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Devices keep going offline</a></li>
+        </ul>
+        """,
+    },
+    "/troubleshooting/smart-home-devices-keep-going-offline/": {
+        "title": "Smart home devices keep going offline",
+        "description": "A practical checklist for smart home devices that randomly go offline and come back on their own.",
+        "section": "Troubleshooting",
+        "body": """
+        <p>If devices keep going offline, do not start by replacing everything. Start by finding the common layer: Wi-Fi, hub, protocol mesh, power, or cloud dependency.</p>
+        <h2>Find the pattern</h2>
+        <ul>
+          <li>Only Wi-Fi devices failing? Check your router and 2.4 GHz setup.</li>
+          <li>Only Zigbee devices failing? Check repeater depth and channel overlap.</li>
+          <li>Only one app/ecosystem failing? Check cloud status and hub health.</li>
+          <li>Only one room failing? It is probably coverage or mesh depth.</li>
+        </ul>
+        <h2>Reliable next steps</h2>
+        <ul>
+          <li>Rebooting is fine once. If it keeps returning, fix the root cause.</li>
+          <li>Segment IoT Wi-Fi if your main SSID is noisy or overloaded.</li>
+          <li>Reduce dependency on cheap Wi-Fi devices when better protocol options exist.</li>
+        </ul>
+        """,
+    },
+    "/wifi-load/2-4ghz-smart-home-best-practices/": {
+        "title": "2.4 GHz smart home best practices",
+        "description": "How to set up 2.4 GHz Wi-Fi so smart plugs, lights, and sensors stop failing for dumb reasons.",
+        "section": "Wi-Fi load",
+        "body": """
+        <p>Most flaky Wi-Fi smart home setups are really <strong>bad 2.4 GHz policy</strong> problems: band steering confusion, odd security settings, weak coverage, and channel congestion.</p>
+        <h2>Best practices</h2>
+        <ul>
+          <li>Use a dedicated 2.4 GHz IoT SSID if onboarding frequently fails.</li>
+          <li>Prefer WPA2/WPA2-WPA3 mixed mode over forcing WPA3-only on cheap IoT gear.</li>
+          <li>Use fixed non-overlapping channels where possible.</li>
+          <li>Keep IoT devices on stable signal, not fringe coverage.</li>
+        </ul>
+        <h2>Good companion pages</h2>
+        <ul>
+          <li><a href='/why-wont-my-smart-plug-connect-to-wifi/'>Why won't my smart plug connect?</a></li>
+          <li><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></li>
+        </ul>
+        """,
+    },
+    "/devices/do-i-need-a-smart-home-hub/": {
+        "title": "Do I need a smart home hub?",
+        "description": "When a hub actually helps, when it is optional, and when skipping it creates future reliability pain.",
+        "section": "Devices",
+        "body": """
+        <p><strong>You need a hub when you care about reliability, mixed protocols, or local control.</strong> You can skip one for a tiny all-Wi-Fi setup, but the tradeoff is usually more cloud dependence and more long-term fragility.</p>
+        <h2>You probably need a hub if</h2>
+        <ul>
+          <li>You want Zigbee or Z-Wave devices.</li>
+          <li>You want automations that survive internet hiccups.</li>
+          <li>You are building beyond a few bulbs/plugs.</li>
+        </ul>
+        <h2>You can maybe skip it if</h2>
+        <ul>
+          <li>You only have a handful of Wi-Fi devices.</li>
+          <li>You accept vendor lock-in and cloud dependency.</li>
+        </ul>
+        <h2>Next clicks</h2>
+        <ul>
+          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>
+          <li><a href='/products/reliable-smart-home-hubs/'>Reliable smart home hubs</a></li>
+        </ul>
+        """,
+    },
+    "/products/reliable-smart-home-hubs/": {
+        "title": "Reliable smart home hubs",
+        "description": "A curated shortlist of smart home hub strategies and hub categories that prioritize reliability over hype.",
+        "section": "Products",
+        "body": """
+        <p>This is not a giant hub catalog. It is the short list of hub categories worth considering if you care about stable mixed-device smart homes.</p>
+        <h2>Recommended patterns</h2>
+        <ul>
+          <li><strong>Main automation hub + bridges:</strong> best overall for mixed homes.</li>
+          <li><strong>Vendor hub only:</strong> fine if you stay narrow, risky if you want flexibility later.</li>
+          <li><strong>Voice assistant only:</strong> acceptable for very small setups, weak for serious automation.</li>
+        </ul>
+        <h2>Buy for these reasons</h2>
+        <ul>
+          <li>Protocol support you actually need</li>
+          <li>Local control options</li>
+          <li>Mature integrations</li>
+          <li>Good recovery when devices go weird</li>
+        </ul>
+        <h2>Related pages</h2>
+        <ul>
+          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>
+          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Protocol comparison</a></li>
+        </ul>
+        """,
+    },
+}
+
+HUBS = {
+    "/start/": {
+        "title": "Start here",
+        "description": "Pick the shortest path to making your smart home reliable again.",
+        "body": """
+        <section class='hero'>
+          <h1 style='margin-top:0'>Start Here.</h1>
+          <p class='subhead'>If your smart home is flaky, the fastest path is to identify whether the problem is protocol choice, hub strategy, or overloaded Wi-Fi.</p>
+          <p style='margin-top:18px; display:flex; gap:12px; flex-wrap:wrap'>
+            <a class='btn' href='/troubleshooting/'>My devices are failing</a>
+            <a class='btn secondary' href='/protocols/'>I need to choose a protocol</a>
+          </p>
+        </section>
+        <div class='grid'>
+          <div class='card'><h3 style='margin-top:0'>Troubleshoot first</h3><p class='muted'>If plugs, lights, or sensors keep failing, start with the symptom.</p><p><a href='/troubleshooting/'>Open troubleshooting →</a></p></div>
+          <div class='card'><h3 style='margin-top:0'>Choose the right protocol</h3><p class='muted'>Zigbee, Z-Wave, Thread, Matter, and Wi-Fi are not interchangeable.</p><p><a href='/protocols/'>Open protocols →</a></p></div>
+          <div class='card'><h3 style='margin-top:0'>Fix the network layer</h3><p class='muted'>Too many cheap Wi-Fi devices can make the whole house feel cursed.</p><p><a href='/wifi-load/'>Open Wi-Fi load →</a></p></div>
+        </div>
+        """,
+    },
+    "/protocols/": {
+        "title": "Protocols",
+        "description": "Choose the right smart home protocol before you buy the wrong gear for your setup.",
+        "body": """
+        <h1 style='margin-top:0'>Protocols</h1>
+        <p class='lede'>Most smart home pain starts with picking devices that do not fit the network or ecosystem you already have.</p>
+        <div class='grid'>
+          <div class='card'><h3 style='margin-top:0'><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Zigbee vs Z-Wave vs Thread vs Matter</a></h3><p class='muted'>The real-world tradeoffs for reliability and mixed homes.</p></div>
+        </div>
+        """,
+    },
+    "/troubleshooting/": {
+        "title": "Troubleshooting",
+        "description": "Symptom-first fixes for pairing failures, disconnects, and ghost offline states.",
+        "body": """
+        <h1 style='margin-top:0'>Troubleshooting</h1>
+        <p class='lede'>Use the shortest symptom-first path instead of reading 20 forum threads.</p>
+        <div class='grid'>
+          <div class='card'><h3 style='margin-top:0'><a href='/why-wont-my-smart-plug-connect-to-wifi/'>Why won't my smart plug connect to Wi-Fi?</a></h3><p class='muted'>Fastest fixes for pairing and setup failures.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/smart-lights-keep-disconnecting/'>Smart lights keep disconnecting</a></h3><p class='muted'>Protocol and topology problems that look like bulb problems.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Smart home devices keep going offline</a></h3><p class='muted'>Find the shared failure layer instead of swapping random devices.</p></div>
+        </div>
+        """,
+    },
+    "/hubs/": {
+        "title": "Hubs and bridges",
+        "description": "Choose a hub strategy that makes mixed smart homes simpler and more reliable.",
+        "body": """
+        <h1 style='margin-top:0'>Hubs and bridges</h1>
+        <div class='grid'>
+          <div class='card'><h3 style='margin-top:0'><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></h3><p class='muted'>The hub patterns that reduce chaos instead of adding more of it.</p></div>
+        </div>
+        """,
+    },
+    "/wifi-load/": {
+        "title": "Wi-Fi load",
+        "description": "Router stress, 2.4 GHz policy, and how Wi-Fi becomes the hidden problem layer in smart homes.",
+        "body": """
+        <h1 style='margin-top:0'>Wi-Fi load</h1>
+        <div class='grid'>
+          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></h3><p class='muted'>How to tell if your network is the bottleneck.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></h3><p class='muted'>Basic Wi-Fi policy choices that prevent a lot of dumb failures.</p></div>
+        </div>
+        """,
+    },
+    "/devices/": {
+        "title": "Devices",
+        "description": "Reliability-first guidance by device type and whether you really need a hub.",
+        "body": """
+        <h1 style='margin-top:0'>Devices</h1>
+        <div class='grid'>
+          <div class='card'><h3 style='margin-top:0'><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></h3><p class='muted'>When a hub is the right call and when it is optional.</p></div>
+        </div>
+        """,
+    },
+    "/products/": {
+        "title": "Products",
+        "description": "Curated product recommendations for reliability-first smart homes.",
+        "body": """
+        <h1 style='margin-top:0'>Products</h1>
+        <div class='grid'>
+          <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-home-hubs/'>Reliable smart home hubs</a></h3><p class='muted'>A short list of hub strategies and categories worth trusting.</p></div>
+        </div>
+        """,
+    },
+}
+
 
 def write(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8")
 
 
+def copy_static() -> None:
+    static = ROOT / "static"
+    if static.exists():
+        shutil.copytree(static, OUT / "assets", dirs_exist_ok=True)
+
+
+def nav() -> str:
+    return """<nav>
+        <a href='/start/'>Start</a>
+        <a href='/protocols/'>Protocols</a>
+        <a href='/troubleshooting/'>Troubleshooting</a>
+        <a href='/hubs/'>Hubs</a>
+        <a href='/wifi-load/'>Wi-Fi load</a>
+        <a href='/devices/'>Devices</a>
+        <a href='/products/'>Products</a>
+      </nav>"""
+
+
 def shell(title: str, body: str, *, path: str = "/", description: str | None = None) -> str:
     desc = description or "Smart home reliability guides, troubleshooting, and practical buying advice."
     canonical = f"{BASE}{path}"
+    body = body.strip()
     return f"""<!doctype html>
 <html lang='en'>
 <head>
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>{title} | {SITE_NAME}</title>
-  <meta name='description' content='{desc}' />
+  <title>{html.escape(title)} | {SITE_NAME}</title>
+  <meta name='description' content='{html.escape(desc, quote=True)}' />
   <link rel='canonical' href='{canonical}' />
+  <link rel='icon' href='/assets/favicon.svg' type='image/svg+xml' />
   <style>
     :root {{ --bg:#f8fafc; --text:#111827; --muted:#475569; --card:#ffffff; --border:#e5e7eb; --brand:#0f766e; --brand-dark:#0f172a; --brand-soft:#ccfbf1; --radius:18px; }}
     * {{ box-sizing: border-box; }}
-    body {{ font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif; margin:0; color:var(--text); background:var(--bg); }}
+    body {{ font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif; margin:0; color:var(--text); background:var(--bg); line-height:1.6; }}
     a {{ color:#0f766e; }}
     .wrap {{ max-width: 1100px; margin: 0 auto; padding: 24px; }}
     header {{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:10px 0 20px; }}
-    .brand {{ font-weight:800; color:var(--brand-dark); text-decoration:none; font-size:1.1rem; }}
+    .brandmark img {{ height:44px; width:auto; display:block; }}
     nav {{ display:flex; gap:14px; flex-wrap:wrap; }}
     nav a {{ text-decoration:none; color:var(--muted); font-weight:600; }}
     .hero {{ background: linear-gradient(135deg, var(--brand-dark), #155e75); color:white; padding: 58px 28px; border-radius: calc(var(--radius) + 6px); }}
@@ -45,23 +375,17 @@ def shell(title: str, body: str, *, path: str = "/", description: str | None = N
     .grid {{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-top:20px; }}
     .card {{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; }}
     .section {{ margin-top:26px; }}
-    .muted {{ color:var(--muted); }}
+    .muted,.lede {{ color:var(--muted); }}
+    article {{ max-width: 820px; }}
+    h1,h2,h3 {{ line-height:1.2; }}
     footer {{ margin-top:42px; padding:24px 0 10px; color:var(--muted); font-size:.95rem; }}
   </style>
 </head>
 <body>
   <div class='wrap'>
     <header>
-      <a class='brand' href='/'>{SITE_NAME}</a>
-      <nav>
-        <a href='/start/'>Start</a>
-        <a href='/protocols/'>Protocols</a>
-        <a href='/troubleshooting/'>Troubleshooting</a>
-        <a href='/hubs/'>Hubs</a>
-        <a href='/wifi-load/'>Wi-Fi load</a>
-        <a href='/devices/'>Devices</a>
-        <a href='/products/'>Products</a>
-      </nav>
+      <a class='brandmark' href='/' aria-label='{SITE_NAME}'><img src='/assets/logo.svg' alt='{SITE_NAME}' /></a>
+      {nav()}
     </header>
     {body}
     <footer>
@@ -76,16 +400,21 @@ def page_card(title: str, desc: str, href: str, cta: str = "Open →") -> str:
     return f"<a class='card' href='{href}' style='text-decoration:none; color:inherit'><h3 style='margin-top:0'>{title}</h3><p class='muted'>{desc}</p><p style='margin-bottom:0; font-weight:700'>{cta}</p></a>"
 
 
+def body_html(section: str, inner: str) -> str:
+    return f"<article><p class='muted' style='font-weight:700; margin-bottom:8px'>{section}</p>{inner}</article>"
+
+
 def build() -> None:
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True, exist_ok=True)
+    copy_static()
 
     write(
         OUT / 'index.html',
         shell(
             'Fix smart home reliability',
-            """
+            f"""
             <section class='hero'>
               <h1 style='margin-top:0'>Fix Smart Home Reliability.<br/>No Guesswork.</h1>
               <p class='subhead'>Practical troubleshooting and buying guidance for flaky smart home setups, mixed ecosystems, disconnects, and overloaded Wi-Fi.</p>
@@ -112,67 +441,31 @@ def build() -> None:
                 {page_card('Products', 'Curated reliability-first product picks.', '/products/')}
               </div>
             </section>
+            <section class='section'>
+              <h2 style='margin-top:0'>First real pages</h2>
+              <div class='grid'>
+                {page_card("Why won't my smart plug connect to Wi-Fi?", 'Fast fixes for one of the most common setup failures.', '/why-wont-my-smart-plug-connect-to-wifi/')}
+                {page_card('Smart lights keep disconnecting', 'Find out whether the real problem is protocol, mesh depth, or Wi-Fi.', '/smart-lights-keep-disconnecting/')}
+                {page_card('Zigbee vs Z-Wave vs Thread vs Matter', 'Pick the right protocol before buying the wrong gear.', '/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/')}
+                {page_card('Best hub for mixed smart home', 'The hub patterns that make mixed ecosystems manageable.', '/hubs/best-hub-for-mixed-smart-home/')}
+              </div>
+            </section>
             """,
             path='/'
         ),
     )
 
-    pages = {
-        'start': ('Start here', 'Pick the shortest path to making your smart home reliable again.', [
-            ('Devices won’t connect or keep dropping', '/troubleshooting/'),
-            ('You are deciding between Zigbee, Z-Wave, Thread, Matter, or Wi-Fi', '/protocols/'),
-            ('You need a hub or bridge strategy for a mixed setup', '/hubs/'),
-            ('You think your router is overloaded with IoT devices', '/wifi-load/'),
-        ]),
-        'protocols': ('Protocols', 'Understand which protocol fits your setup before you buy the wrong category of gear.', [
-            ('Zigbee vs Z-Wave vs Thread vs Matter', '#'),
-            ('When Wi-Fi devices are still the right answer', '#'),
-            ('How mixed-protocol homes should be planned', '#'),
-        ]),
-        'troubleshooting': ('Troubleshooting', 'Symptom-first troubleshooting for pairing failures, disconnects, latency, and offline devices.', [
-            ('Why won’t my smart plug connect to Wi-Fi?', '#'),
-            ('Smart lights keep disconnecting', '#'),
-            ('Device says offline but Wi-Fi is fine', '#'),
-        ]),
-        'hubs': ('Hubs and bridges', 'Pick the right hub strategy for a mixed smart home without painting yourself into a corner.', [
-            ('Best hub for mixed smart home', '#'),
-            ('Do I need a smart home hub?', '#'),
-            ('Bridge vs hub vs voice-assistant-only setups', '#'),
-        ]),
-        'wifi-load': ('Wi-Fi load', 'Understand how smart devices stress your network and when segmentation actually matters.', [
-            ('How many devices can Wi-Fi handle?', '#'),
-            ('Too many smart devices on Wi-Fi', '#'),
-            ('2.4 GHz smart home setup best practices', '#'),
-        ]),
-        'devices': ('Devices', 'Reliability guidance by device type and ecosystem fit.', [
-            ('Smart plugs', '#'),
-            ('Smart switches', '#'),
-            ('Smart bulbs and lights', '#'),
-            ('Sensors, locks, cameras, and bridges', '#'),
-        ]),
-        'products': ('Products', 'Curated picks for stable hubs, bridges, sensors, plugs, and switches.', [
-            ('Best hub for mixed smart home', '#'),
-            ('Reliable smart plugs', '#'),
-            ('Reliable smart switches', '#'),
-        ]),
-    }
+    for path, spec in HUBS.items():
+        out = OUT / path.strip("/") / "index.html"
+        write(out, shell(spec["title"], spec["body"], path=path, description=spec["description"]))
 
-    for slug, (title, desc, bullets) in pages.items():
-        write(
-            OUT / slug / 'index.html',
-            shell(
-                title,
-                '<h1 style="margin-top:0">' + title + '</h1>'
-                + f"<p class='muted'>{desc}</p>"
-                + '<div class="card"><ul>' + ''.join(f'<li><a href="{href}">{label}</a></li>' for label, href in bullets) + '</ul></div>',
-                path=f'/{slug}/',
-                description=desc,
-            ),
-        )
+    for path, spec in PAGES.items():
+        out = OUT / path.strip("/") / "index.html"
+        write(out, shell(spec["title"], body_html(spec["section"], spec["body"]), path=path, description=spec["description"]))
 
     write(OUT / 'robots.txt', 'User-agent: *\nAllow: /\n')
 
-    urls = ['/', '/start/', '/protocols/', '/troubleshooting/', '/hubs/', '/wifi-load/', '/devices/', '/products/']
+    urls = ['/', *HUBS.keys(), *PAGES.keys()]
     sitemap = '\n'.join([
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

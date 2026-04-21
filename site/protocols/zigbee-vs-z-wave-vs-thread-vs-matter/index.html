@@ -3,9 +3,9 @@
 <head>
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>Wi-Fi load | Fix My Smart Home Now</title>
-  <meta name='description' content='Router stress, 2.4 GHz policy, and how Wi-Fi becomes the hidden problem layer in smart homes.' />
-  <link rel='canonical' href='https://fixmysmarthomenow.com/wifi-load/' />
+  <title>Zigbee vs Z-Wave vs Thread vs Matter | Fix My Smart Home Now</title>
+  <meta name='description' content='Which smart home protocol is actually best for reliability, mixed ecosystems, and future flexibility.' />
+  <link rel='canonical' href='https://fixmysmarthomenow.com/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/' />
   <link rel='icon' href='/assets/favicon.svg' type='image/svg+xml' />
   <style>
     :root { --bg:#f8fafc; --text:#111827; --muted:#475569; --card:#ffffff; --border:#e5e7eb; --brand:#0f766e; --brand-dark:#0f172a; --brand-soft:#ccfbf1; --radius:18px; }
@@ -44,11 +44,22 @@
         <a href='/products/'>Products</a>
       </nav>
     </header>
-    <h1 style='margin-top:0'>Wi-Fi load</h1>
-        <div class='grid'>
-          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></h3><p class='muted'>How to tell if your network is the bottleneck.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></h3><p class='muted'>Basic Wi-Fi policy choices that prevent a lot of dumb failures.</p></div>
-        </div>
+    <article><p class='muted' style='font-weight:700; margin-bottom:8px'>Protocols</p>
+        <p><strong>The short version:</strong> Zigbee is still the best overall workhorse for large device counts, Z-Wave is strong for locks/sensors in the right ecosystem, Thread is promising but still uneven, and Matter is a transport layer story more than a magic reliability fix.</p>
+        <h2>Use Zigbee when</h2>
+        <ul><li>You want lots of inexpensive sensors/plugs and a strong mesh.</li><li>You can commit to a good hub/coordinator.</li></ul>
+        <h2>Use Z-Wave when</h2>
+        <ul><li>You care about locks, security devices, and a more curated device ecosystem.</li><li>You are okay with slightly higher device cost.</li></ul>
+        <h2>Use Thread when</h2>
+        <ul><li>You already have strong Apple/Google/Nest border router support.</li><li>You want modern low-power networking, but you accept ecosystem rough edges.</li></ul>
+        <h2>What Matter actually changes</h2>
+        <p>Matter helps interoperability and onboarding, but it does <strong>not</strong> automatically fix weak Wi-Fi, poor border routers, or bad device firmware.</p>
+        <h2>Best next clicks</h2>
+        <ul>
+          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>
+          <li><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></li>
+        </ul>
+        </article>
     <footer>
       <p>Fix My Smart Home Now helps people build smart homes that actually stay connected.</p>
     </footer>

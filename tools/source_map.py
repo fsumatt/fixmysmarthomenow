@@ -8,14 +8,23 @@ import json
 from urllib.parse import urlparse
 
 MAP: dict[str, dict[str, object]] = {
-    "/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Fix smart home reliability", "Main paths"]},
-    "/start/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Start here", "making your smart home reliable again"]},
-    "/protocols/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Protocols", "Zigbee vs Z-Wave vs Thread vs Matter"]},
-    "/troubleshooting/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Troubleshooting", "pairing failures, disconnects"]},
-    "/hubs/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Hubs and bridges", "mixed smart home"]},
-    "/wifi-load/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Wi-Fi load", "How many devices can Wi-Fi handle?"]},
-    "/devices/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Devices", "Reliability guidance by device type"]},
-    "/products/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Products", "Curated picks for stable hubs"]},
+    "/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Fix smart home reliability", "First real pages"]},
+    "/start/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Start Here.", "shortest path"]},
+    "/protocols/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Protocols", "wrong gear"]},
+    "/troubleshooting/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Troubleshooting", "symptom-first"]},
+    "/hubs/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Hubs and bridges", "mixed smart homes"]},
+    "/wifi-load/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Wi-Fi load", "2.4 GHz"]},
+    "/devices/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Devices", "Reliability-first guidance"]},
+    "/products/": {"source": "tools/build.py", "type": "generator-section", "markers": ["Products", "Curated product recommendations"]},
+    "/why-wont-my-smart-plug-connect-to-wifi/": {"source": "tools/build.py", "type": "generator-page", "markers": ["5 GHz-only setup", "WPA3 quirks"]},
+    "/smart-lights-keep-disconnecting/": {"source": "tools/build.py", "type": "generator-page", "markers": ["mesh depth", "cheap Wi-Fi devices"]},
+    "/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/": {"source": "tools/build.py", "type": "generator-page", "markers": ["Zigbee is still the best overall workhorse", "Matter helps interoperability"]},
+    "/hubs/best-hub-for-mixed-smart-home/": {"source": "tools/build.py", "type": "generator-page", "markers": ["mixed smart home", "One main hub + a few bridges"]},
+    "/wifi-load/how-many-devices-can-wifi-handle-smart-home/": {"source": "tools/build.py", "type": "generator-page", "markers": ["There is no single device limit", "router is overloaded"]},
+    "/troubleshooting/smart-home-devices-keep-going-offline/": {"source": "tools/build.py", "type": "generator-page", "markers": ["common layer", "shared failure layer"]},
+    "/wifi-load/2-4ghz-smart-home-best-practices/": {"source": "tools/build.py", "type": "generator-page", "markers": ["bad 2.4 GHz policy", "dedicated 2.4 GHz IoT SSID"]},
+    "/devices/do-i-need-a-smart-home-hub/": {"source": "tools/build.py", "type": "generator-page", "markers": ["You need a hub when", "cloud dependency"]},
+    "/products/reliable-smart-home-hubs/": {"source": "tools/build.py", "type": "generator-page", "markers": ["short list of hub categories", "local control options"]},
 }
 
 
@@ -32,21 +41,19 @@ def main() -> int:
     ap.add_argument("--url", required=True)
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
-
     path = norm_path(args.url)
     item = MAP.get(path)
-    if not item:
-        out = {"url": args.url, "path": path, "found": False, "note": "No explicit source mapping found. Do not edit generated output directly."}
+    out = {"url": args.url, "path": path, "found": bool(item)}
+    if item:
+        out.update(item)
     else:
-        out = {"url": args.url, "path": path, "found": True, **item}
-
+        out["note"] = "No explicit source mapping found. Do not edit generated output directly."
     if args.json:
         print(json.dumps(out, indent=2))
     else:
-        print(f"URL: {out['url']}")
-        print(f"PATH: {out['path']}")
-        print(f"FOUND: {out['found']}")
-        if out["found"]:
+        for k in ["url", "path", "found"]:
+            print(f"{k.upper()}: {out[k]}")
+        if item:
             print(f"SOURCE: {out['source']}")
             print(f"TYPE: {out['type']}")
             print("MARKERS:")

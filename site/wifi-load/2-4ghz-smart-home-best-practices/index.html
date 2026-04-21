@@ -3,9 +3,9 @@
 <head>
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>Wi-Fi load | Fix My Smart Home Now</title>
-  <meta name='description' content='Router stress, 2.4 GHz policy, and how Wi-Fi becomes the hidden problem layer in smart homes.' />
-  <link rel='canonical' href='https://fixmysmarthomenow.com/wifi-load/' />
+  <title>2.4 GHz smart home best practices | Fix My Smart Home Now</title>
+  <meta name='description' content='How to set up 2.4 GHz Wi-Fi so smart plugs, lights, and sensors stop failing for dumb reasons.' />
+  <link rel='canonical' href='https://fixmysmarthomenow.com/wifi-load/2-4ghz-smart-home-best-practices/' />
   <link rel='icon' href='/assets/favicon.svg' type='image/svg+xml' />
   <style>
     :root { --bg:#f8fafc; --text:#111827; --muted:#475569; --card:#ffffff; --border:#e5e7eb; --brand:#0f766e; --brand-dark:#0f172a; --brand-soft:#ccfbf1; --radius:18px; }
@@ -44,11 +44,21 @@
         <a href='/products/'>Products</a>
       </nav>
     </header>
-    <h1 style='margin-top:0'>Wi-Fi load</h1>
-        <div class='grid'>
-          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></h3><p class='muted'>How to tell if your network is the bottleneck.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></h3><p class='muted'>Basic Wi-Fi policy choices that prevent a lot of dumb failures.</p></div>
-        </div>
+    <article><p class='muted' style='font-weight:700; margin-bottom:8px'>Wi-Fi load</p>
+        <p>Most flaky Wi-Fi smart home setups are really <strong>bad 2.4 GHz policy</strong> problems: band steering confusion, odd security settings, weak coverage, and channel congestion.</p>
+        <h2>Best practices</h2>
+        <ul>
+          <li>Use a dedicated 2.4 GHz IoT SSID if onboarding frequently fails.</li>
+          <li>Prefer WPA2/WPA2-WPA3 mixed mode over forcing WPA3-only on cheap IoT gear.</li>
+          <li>Use fixed non-overlapping channels where possible.</li>
+          <li>Keep IoT devices on stable signal, not fringe coverage.</li>
+        </ul>
+        <h2>Good companion pages</h2>
+        <ul>
+          <li><a href='/why-wont-my-smart-plug-connect-to-wifi/'>Why won't my smart plug connect?</a></li>
+          <li><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></li>
+        </ul>
+        </article>
     <footer>
       <p>Fix My Smart Home Now helps people build smart homes that actually stay connected.</p>
     </footer>
