@@ -3,9 +3,9 @@
 <head>
   <meta charset='utf-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
-  <title>Troubleshooting | Fix My Smart Home Now</title>
-  <meta name='description' content='Symptom-first fixes for pairing failures, disconnects, and ghost offline states.' />
-  <link rel='canonical' href='https://fixmysmarthomenow.com/troubleshooting/' />
+  <title>Thread vs Zigbee | Fix My Smart Home Now</title>
+  <meta name='description' content='How Thread and Zigbee compare for smart home reliability, maturity, and device ecosystem fit.' />
+  <link rel='canonical' href='https://fixmysmarthomenow.com/protocols/thread-vs-zigbee/' />
   <link rel='icon' href='/assets/favicon.svg' type='image/svg+xml' />
   <style>
     :root { --bg:#f8fafc; --text:#111827; --muted:#475569; --card:#ffffff; --border:#e5e7eb; --brand:#0f766e; --brand-dark:#0f172a; --brand-soft:#ccfbf1; --radius:18px; }
@@ -44,16 +44,22 @@
         <a href='/products/'>Products</a>
       </nav>
     </header>
-    <h1 style='margin-top:0'>Troubleshooting</h1>
-        <p class='lede'>Use the shortest symptom-first path instead of reading 20 forum threads.</p>
-        <div class='grid'>
-          <div class='card'><h3 style='margin-top:0'><a href='/why-wont-my-smart-plug-connect-to-wifi/'>Why won't my smart plug connect to Wi-Fi?</a></h3><p class='muted'>Fastest fixes for pairing and setup failures.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/why-wont-my-smart-bulb-pair/'>Why won't my smart bulb pair?</a></h3><p class='muted'>Fix bulbs that fail reset, onboarding, or pairing mode.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/smart-lights-keep-disconnecting/'>Smart lights keep disconnecting</a></h3><p class='muted'>Protocol and topology problems that look like bulb problems.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Smart home devices keep going offline</a></h3><p class='muted'>Find the shared failure layer instead of swapping random devices.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/alexa-device-unresponsive-but-wifi-works/'>Alexa device unresponsive but Wi-Fi works</a></h3><p class='muted'>Usually a bridge, cloud, or skill graph issue.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/google-home-device-offline-fix/'>Google Home device offline fix</a></h3><p class='muted'>Separate real network failures from account sync drift.</p></div>
-        </div>
+    <article><p class='muted' style='font-weight:700; margin-bottom:8px'>Protocols</p>
+        <p>Thread is elegant and modern. Zigbee is battle-tested and still more predictable in many real homes. Choose based on ecosystem maturity, not just what sounds newer.</p>
+        <h2>Thread strengths</h2>
+        <ul>
+          <li>Modern IP-based architecture</li>
+          <li>Good fit with Matter and current ecosystem momentum</li>
+        </ul>
+        <h2>Zigbee strengths</h2>
+        <ul>
+          <li>Huge device range</li>
+          <li>Excellent mesh behavior when paired with a solid coordinator</li>
+          <li>Better practical maturity in many categories</li>
+        </ul>
+        <h2>Best simple rule</h2>
+        <p>If you want maximum flexibility and cheap device breadth today, Zigbee is still the safer default. If your ecosystem already has strong Thread border routers and the devices you want are well supported, Thread can be great.</p>
+        </article>
     <footer>
       <p>Fix My Smart Home Now helps people build smart homes that actually stay connected.</p>
     </footer>

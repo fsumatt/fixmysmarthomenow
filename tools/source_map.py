@@ -25,6 +25,14 @@ MAP: dict[str, dict[str, object]] = {
     "/wifi-load/2-4ghz-smart-home-best-practices/": {"source": "tools/build.py", "type": "generator-page", "markers": ["bad 2.4 GHz policy", "dedicated 2.4 GHz IoT SSID"]},
     "/devices/do-i-need-a-smart-home-hub/": {"source": "tools/build.py", "type": "generator-page", "markers": ["You need a hub when", "cloud dependency"]},
     "/products/reliable-smart-home-hubs/": {"source": "tools/build.py", "type": "generator-page", "markers": ["short list of hub categories", "local control options"]},
+    "/why-wont-my-smart-bulb-pair/": {"source": "tools/build.py", "type": "generator-page", "markers": ["bad reset state", "wrong protocol expectations"]},
+    "/alexa-device-unresponsive-but-wifi-works/": {"source": "tools/build.py", "type": "generator-page", "markers": ["cloud integration", "skill state"]},
+    "/google-home-device-offline-fix/": {"source": "tools/build.py", "type": "generator-page", "markers": ["cloud account sync drift", "native vendor app"]},
+    "/protocols/matter-vs-zigbee/": {"source": "tools/build.py", "type": "generator-page", "markers": ["Zigbee is still better", "interoperability layer"]},
+    "/protocols/thread-vs-zigbee/": {"source": "tools/build.py", "type": "generator-page", "markers": ["Thread is elegant and modern", "battle-tested"]},
+    "/wifi-load/too-many-smart-devices-on-wifi/": {"source": "tools/build.py", "type": "generator-page", "markers": ["too many smart devices on Wi-Fi", "all-Wi-Fi strategy"]},
+    "/wifi-load/smart-home-separate-ssid/": {"source": "tools/build.py", "type": "generator-page", "markers": ["separate SSID", "local discovery"]},
+    "/products/reliable-smart-plugs/": {"source": "tools/build.py", "type": "generator-page", "markers": ["Reliable smart plugs", "protocol fit"]},
 }
 
 

@@ -16,6 +16,11 @@ KEY_PAGES = [
     "/products/",
     "/why-wont-my-smart-plug-connect-to-wifi/",
     "/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/",
+    "/why-wont-my-smart-bulb-pair/",
+    "/alexa-device-unresponsive-but-wifi-works/",
+    "/protocols/matter-vs-zigbee/",
+    "/wifi-load/too-many-smart-devices-on-wifi/",
+    "/products/reliable-smart-plugs/",
 ]
 
 

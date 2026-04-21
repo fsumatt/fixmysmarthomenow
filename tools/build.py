@@ -13,6 +13,182 @@ BASE = "https://fixmysmarthomenow.com"
 SITE_NAME = "Fix My Smart Home Now"
 
 PAGES = {
+
+    "/why-wont-my-smart-bulb-pair/": {
+        "title": "Why won't my smart bulb pair?",
+        "description": "The fastest fixes for smart bulbs that refuse to enter pairing mode, fail setup, or disappear during onboarding.",
+        "section": "Troubleshooting",
+        "body": """
+        <p>Smart bulbs usually fail pairing because of <strong>bad reset state</strong>, <strong>wrong protocol expectations</strong>, or <strong>weak onboarding conditions</strong>.</p>
+        <h2>Check these first</h2>
+        <ul>
+          <li>Confirm the bulb is actually reset and blinking in the pattern the manufacturer expects.</li>
+          <li>Make sure you are pairing it to the right thing: Wi-Fi app, Zigbee hub, Matter controller, or Thread border router.</li>
+          <li>Move the bulb close to the controller or hub for first setup.</li>
+          <li>Turn off aggressive automations or old stale device entries before retrying.</li>
+        </ul>
+        <h2>Common mistakes</h2>
+        <ul>
+          <li>Trying to pair a Zigbee bulb directly to Wi-Fi.</li>
+          <li>Assuming Matter means every app can adopt it equally well.</li>
+          <li>Trying the reset sequence too quickly and never fully clearing the bulb.</li>
+        </ul>
+        <h2>Best next clicks</h2>
+        <ul>
+          <li><a href='/smart-lights-keep-disconnecting/'>Smart lights keep disconnecting</a></li>
+          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Protocol comparison</a></li>
+        </ul>
+        """,
+    },
+    "/alexa-device-unresponsive-but-wifi-works/": {
+        "title": "Alexa device unresponsive but Wi-Fi works",
+        "description": "How to fix Alexa devices that say unresponsive even though the network itself looks fine.",
+        "section": "Troubleshooting",
+        "body": """
+        <p>If Alexa says a device is unresponsive while Wi-Fi looks fine, the failure is usually at the <strong>cloud integration</strong>, <strong>skill state</strong>, or <strong>hub bridge</strong> layer, not raw internet access.</p>
+        <h2>Most common causes</h2>
+        <ul>
+          <li>Stale skill/token connections</li>
+          <li>Hub or bridge offline even though the voice assistant is online</li>
+          <li>Device renamed or duplicated in the Alexa graph</li>
+          <li>Cloud vendor outage or sync lag</li>
+        </ul>
+        <h2>Fastest fixes</h2>
+        <ul>
+          <li>Check whether the device still works in its native app or hub.</li>
+          <li>Disable/re-enable the Alexa skill only if the native side still works.</li>
+          <li>Remove duplicates and re-discover if the entity graph is messy.</li>
+        </ul>
+        <h2>Related pages</h2>
+        <ul>
+          <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Devices keep going offline</a></li>
+          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>
+        </ul>
+        """,
+    },
+    "/google-home-device-offline-fix/": {
+        "title": "Google Home device offline fix",
+        "description": "A practical checklist for Google Home and Google Assistant devices that appear offline or stop responding.",
+        "section": "Troubleshooting",
+        "body": """
+        <p>Google Home offline states are often a mix of <strong>local network issues</strong>, <strong>cloud account sync drift</strong>, and <strong>device-vendor integration failures</strong>.</p>
+        <h2>What to check first</h2>
+        <ul>
+          <li>Does the device still work in the native vendor app?</li>
+          <li>Is only one home/room failing, or everything?</li>
+          <li>Did the device switch Wi-Fi bands or networks after a router change?</li>
+        </ul>
+        <h2>Best fixes</h2>
+        <ul>
+          <li>Re-sync linked services only after confirming the native side works.</li>
+          <li>Clean up duplicate home assignments and stale rooms.</li>
+          <li>Fix weak 2.4 GHz policy before blaming Google itself.</li>
+        </ul>
+        <h2>Next clicks</h2>
+        <ul>
+          <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz best practices</a></li>
+          <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Devices keep going offline</a></li>
+        </ul>
+        """,
+    },
+    "/protocols/matter-vs-zigbee/": {
+        "title": "Matter vs Zigbee",
+        "description": "When Matter is the right bet, when Zigbee is still better, and why they solve different problems.",
+        "section": "Protocols",
+        "body": """
+        <p><strong>Zigbee is still better for big, practical device meshes today.</strong> Matter is better understood as an interoperability layer that can improve onboarding and cross-platform support, but it does not automatically replace Zigbee's mesh maturity.</p>
+        <h2>Use Matter when</h2>
+        <ul>
+          <li>You care about multi-platform support across Apple, Google, Amazon, or Samsung.</li>
+          <li>You are buying newer devices that already have solid Matter support.</li>
+        </ul>
+        <h2>Use Zigbee when</h2>
+        <ul>
+          <li>You want lots of sensors/plugs/lights with strong mesh behavior.</li>
+          <li>You already have a good hub/coordinator.</li>
+        </ul>
+        <h2>Reality check</h2>
+        <p>Matter does not fix bad Wi-Fi, weak border routers, or immature vendor firmware. Zigbee still wins a lot of boring reliability fights.</p>
+        """,
+    },
+    "/protocols/thread-vs-zigbee/": {
+        "title": "Thread vs Zigbee",
+        "description": "How Thread and Zigbee compare for smart home reliability, maturity, and device ecosystem fit.",
+        "section": "Protocols",
+        "body": """
+        <p>Thread is elegant and modern. Zigbee is battle-tested and still more predictable in many real homes. Choose based on ecosystem maturity, not just what sounds newer.</p>
+        <h2>Thread strengths</h2>
+        <ul>
+          <li>Modern IP-based architecture</li>
+          <li>Good fit with Matter and current ecosystem momentum</li>
+        </ul>
+        <h2>Zigbee strengths</h2>
+        <ul>
+          <li>Huge device range</li>
+          <li>Excellent mesh behavior when paired with a solid coordinator</li>
+          <li>Better practical maturity in many categories</li>
+        </ul>
+        <h2>Best simple rule</h2>
+        <p>If you want maximum flexibility and cheap device breadth today, Zigbee is still the safer default. If your ecosystem already has strong Thread border routers and the devices you want are well supported, Thread can be great.</p>
+        """,
+    },
+    "/wifi-load/too-many-smart-devices-on-wifi/": {
+        "title": "Too many smart devices on Wi-Fi",
+        "description": "How to tell when your smart home has outgrown a simple all-Wi-Fi approach and what to do next.",
+        "section": "Wi-Fi load",
+        "body": """
+        <p>If you have too many smart devices on Wi-Fi, the solution is usually <strong>better network policy and protocol mix</strong>, not just a bigger pile of extenders.</p>
+        <h2>Warning signs</h2>
+        <ul>
+          <li>Devices fail randomly during onboarding</li>
+          <li>Apps lag even though internet speed tests look normal</li>
+          <li>2.4 GHz gear is much less stable than phones and laptops</li>
+        </ul>
+        <h2>What to do</h2>
+        <ul>
+          <li>Move simple always-on devices to Zigbee/Z-Wave/Thread where practical.</li>
+          <li>Create a dedicated IoT SSID.</li>
+          <li>Retire weak ISP routers before buying more random smart devices.</li>
+        </ul>
+        """,
+    },
+    "/wifi-load/smart-home-separate-ssid/": {
+        "title": "Should smart home devices use a separate SSID?",
+        "description": "When a separate IoT SSID helps, when it is overkill, and how to do it without making your smart home worse.",
+        "section": "Wi-Fi load",
+        "body": """
+        <p><strong>Yes, often.</strong> A separate SSID for smart home devices can make onboarding easier, reduce weird band-steering failures, and keep your main network cleaner.</p>
+        <h2>It helps when</h2>
+        <ul>
+          <li>You have lots of 2.4 GHz-only devices.</li>
+          <li>Band steering causes onboarding failures.</li>
+          <li>You want easier troubleshooting and cleaner segmentation.</li>
+        </ul>
+        <h2>It can hurt when</h2>
+        <ul>
+          <li>You isolate the SSID too hard and break local discovery.</li>
+          <li>You split devices and controllers in a way that stops them from seeing each other.</li>
+        </ul>
+        <p>Use segmentation for clarity, not as a random security ritual.</p>
+        """,
+    },
+    "/products/reliable-smart-plugs/": {
+        "title": "Reliable smart plugs",
+        "description": "What actually makes a smart plug reliable, and which buying patterns avoid the usual Wi-Fi plug headaches.",
+        "section": "Products",
+        "body": """
+        <p>Reliable smart plugs are less about brand hype and more about <strong>protocol fit</strong>, clean onboarding, and whether they behave well in your actual ecosystem.</p>
+        <h2>Buy based on</h2>
+        <ul>
+          <li>Protocol compatibility with your hub/home</li>
+          <li>Stable app/onboarding flow</li>
+          <li>Whether you need energy monitoring</li>
+          <li>Whether you want to avoid stuffing more cheap clients onto Wi-Fi</li>
+        </ul>
+        <h2>Best pattern</h2>
+        <p>If you already have a solid Zigbee or hub-first setup, protocol-native plugs are often better than adding more bargain Wi-Fi devices.</p>
+        """,
+    },
     "/why-wont-my-smart-plug-connect-to-wifi/": {
         "title": "Why won't my smart plug connect to Wi-Fi?",
         "description": "The fastest way to fix smart plugs that refuse to connect, fail setup, or drop right after pairing.",
@@ -262,6 +438,8 @@ HUBS = {
         <p class='lede'>Most smart home pain starts with picking devices that do not fit the network or ecosystem you already have.</p>
         <div class='grid'>
           <div class='card'><h3 style='margin-top:0'><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Zigbee vs Z-Wave vs Thread vs Matter</a></h3><p class='muted'>The real-world tradeoffs for reliability and mixed homes.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/protocols/matter-vs-zigbee/'>Matter vs Zigbee</a></h3><p class='muted'>Interoperability promise vs practical mesh maturity.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/protocols/thread-vs-zigbee/'>Thread vs Zigbee</a></h3><p class='muted'>Newer architecture versus battle-tested device depth.</p></div>
         </div>
         """,
     },
@@ -273,8 +451,11 @@ HUBS = {
         <p class='lede'>Use the shortest symptom-first path instead of reading 20 forum threads.</p>
         <div class='grid'>
           <div class='card'><h3 style='margin-top:0'><a href='/why-wont-my-smart-plug-connect-to-wifi/'>Why won't my smart plug connect to Wi-Fi?</a></h3><p class='muted'>Fastest fixes for pairing and setup failures.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/why-wont-my-smart-bulb-pair/'>Why won't my smart bulb pair?</a></h3><p class='muted'>Fix bulbs that fail reset, onboarding, or pairing mode.</p></div>
           <div class='card'><h3 style='margin-top:0'><a href='/smart-lights-keep-disconnecting/'>Smart lights keep disconnecting</a></h3><p class='muted'>Protocol and topology problems that look like bulb problems.</p></div>
           <div class='card'><h3 style='margin-top:0'><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Smart home devices keep going offline</a></h3><p class='muted'>Find the shared failure layer instead of swapping random devices.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/alexa-device-unresponsive-but-wifi-works/'>Alexa device unresponsive but Wi-Fi works</a></h3><p class='muted'>Usually a bridge, cloud, or skill graph issue.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/google-home-device-offline-fix/'>Google Home device offline fix</a></h3><p class='muted'>Separate real network failures from account sync drift.</p></div>
         </div>
         """,
     },
@@ -295,7 +476,9 @@ HUBS = {
         <h1 style='margin-top:0'>Wi-Fi load</h1>
         <div class='grid'>
           <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></h3><p class='muted'>How to tell if your network is the bottleneck.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/too-many-smart-devices-on-wifi/'>Too many smart devices on Wi-Fi</a></h3><p class='muted'>When the all-Wi-Fi strategy is becoming the real problem.</p></div>
           <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></h3><p class='muted'>Basic Wi-Fi policy choices that prevent a lot of dumb failures.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/smart-home-separate-ssid/'>Should smart home devices use a separate SSID?</a></h3><p class='muted'>Segmentation that helps instead of randomly breaking local discovery.</p></div>
         </div>
         """,
     },
@@ -316,6 +499,7 @@ HUBS = {
         <h1 style='margin-top:0'>Products</h1>
         <div class='grid'>
           <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-home-hubs/'>Reliable smart home hubs</a></h3><p class='muted'>A short list of hub strategies and categories worth trusting.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-plugs/'>Reliable smart plugs</a></h3><p class='muted'>Buy based on protocol fit, not random bargain plug piles.</p></div>
         </div>
         """,
     },
@@ -445,9 +629,13 @@ def build() -> None:
               <h2 style='margin-top:0'>First real pages</h2>
               <div class='grid'>
                 {page_card("Why won't my smart plug connect to Wi-Fi?", 'Fast fixes for one of the most common setup failures.', '/why-wont-my-smart-plug-connect-to-wifi/')}
+                {page_card("Why won't my smart bulb pair?", 'Reset, onboarding, and wrong-protocol pairing mistakes.', '/why-wont-my-smart-bulb-pair/')}
                 {page_card('Smart lights keep disconnecting', 'Find out whether the real problem is protocol, mesh depth, or Wi-Fi.', '/smart-lights-keep-disconnecting/')}
                 {page_card('Zigbee vs Z-Wave vs Thread vs Matter', 'Pick the right protocol before buying the wrong gear.', '/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/')}
+                {page_card('Matter vs Zigbee', 'Interoperability promise versus practical mesh maturity.', '/protocols/matter-vs-zigbee/')}
                 {page_card('Best hub for mixed smart home', 'The hub patterns that make mixed ecosystems manageable.', '/hubs/best-hub-for-mixed-smart-home/')}
+                {page_card('Too many smart devices on Wi‑Fi', 'When Wi-Fi itself is becoming the hidden bottleneck.', '/wifi-load/too-many-smart-devices-on-wifi/')}
+                {page_card('Should smart home devices use a separate SSID?', 'Segmentation that helps instead of breaking discovery.', '/wifi-load/smart-home-separate-ssid/')}
               </div>
             </section>
             """,
