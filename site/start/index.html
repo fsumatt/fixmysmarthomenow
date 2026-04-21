@@ -6,7 +6,10 @@
   <title>Start here | Fix My Smart Home Now</title>
   <meta name='description' content='Pick the shortest path to making your smart home reliable again.' />
   <link rel='canonical' href='https://fixmysmarthomenow.com/start/' />
-  <link rel='icon' href='/assets/favicon.svg' type='image/svg+xml' />
+  <link rel='icon' href='/favicon.ico' sizes='any' />
+  <link rel='icon' type='image/png' sizes='48x48' href='/favicon-48.png' />
+  <link rel='icon' type='image/png' sizes='192x192' href='/favicon-192.png' />
+  <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
   <style>
     :root { --bg:#f8fafc; --text:#111827; --muted:#475569; --card:#ffffff; --border:#e5e7eb; --brand:#0f766e; --brand-dark:#0f172a; --brand-soft:#ccfbf1; --radius:18px; }
     * { box-sizing: border-box; }
@@ -14,7 +17,10 @@
     a { color:#0f766e; }
     .wrap { max-width: 1100px; margin: 0 auto; padding: 24px; }
     header { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:10px 0 20px; }
-    .brandmark img { height:44px; width:auto; display:block; }
+    .brandmark { text-decoration:none; color:inherit; }
+    .brandwrap { display:flex; align-items:center; gap:10px; min-width:0; }
+    .logo { width:36px; height:36px; display:block; border-radius:10px; }
+    .brandtext { font-weight:800; color:var(--brand-dark); font-size:1.05rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     nav { display:flex; gap:14px; flex-wrap:wrap; }
     nav a { text-decoration:none; color:var(--muted); font-weight:600; }
     .hero { background: linear-gradient(135deg, var(--brand-dark), #155e75); color:white; padding: 58px 28px; border-radius: calc(var(--radius) + 6px); }
@@ -33,7 +39,7 @@
 <body>
   <div class='wrap'>
     <header>
-      <a class='brandmark' href='/' aria-label='Fix My Smart Home Now'><img src='/assets/logo.svg' alt='Fix My Smart Home Now' /></a>
+      <a class='brandmark' href='/' aria-label='Fix My Smart Home Now'><div class='brandwrap'><img class='logo' src='/assets/brand/ndz-mark-48.png' width='36' height='36' alt='' aria-hidden='true' decoding='async' /><span class='brandtext'>Fix My Smart Home Now</span></div></a>
       <nav>
         <a href='/start/'>Start</a>
         <a href='/protocols/'>Protocols</a>
