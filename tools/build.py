@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 from build_pages.landing import HUBS, build_homepage, build_hubs
 from build_pages.protocols import build_protocol_pages
 from build_pages.troubleshooting import build_troubleshooting_pages
+from build_pages.wifi_load import build_wifi_load_pages
 from build_pages.shared import write, copy_static, shell, body_html
 OUT = ROOT / "site"
 BASE = "https://fixmysmarthomenow.com"
@@ -20,117 +21,6 @@ SITE_NAME = "Fix My Smart Home Now"
 
 PAGES = {
 
-    "/wifi-load/too-many-smart-devices-on-wifi/": {
-        "title": "Too many smart devices on Wi-Fi",
-        "description": "How to tell when your smart home has outgrown a simple all-Wi-Fi approach and what to do next.",
-        "section": "Wi-Fi load",
-        "body": """
-        <p>If you have too many smart devices on Wi-Fi, the solution is usually <strong>better network policy and protocol mix</strong>, not just a bigger pile of extenders.</p>
-        <h2>Warning signs</h2>
-        <ul>
-          <li>Devices fail randomly during onboarding</li>
-          <li>Apps lag even though internet speed tests look normal</li>
-          <li>2.4 GHz gear is much less stable than phones and laptops</li>
-        </ul>
-        <h2>What to do</h2>
-        <ul>
-          <li>Move simple always-on devices to Zigbee/Z-Wave/Thread where practical.</li>
-          <li>Create a dedicated IoT SSID.</li>
-          <li>Retire weak ISP routers before buying more random smart devices.</li>
-        </ul>
-        """,
-    },
-    "/wifi-load/smart-home-separate-ssid/": {
-        "title": "Should smart home devices use a separate SSID?",
-        "description": "When a separate IoT SSID helps, when it is overkill, and how to do it without making your smart home worse.",
-        "section": "Wi-Fi load",
-        "body": """
-        <p><strong>Yes, often.</strong> A separate SSID for smart home devices can make onboarding easier, reduce weird band-steering failures, and keep your main network cleaner.</p>
-        <h2>It helps when</h2>
-        <ul>
-          <li>You have lots of 2.4 GHz-only devices.</li>
-          <li>Band steering causes onboarding failures.</li>
-          <li>You want easier troubleshooting and cleaner segmentation.</li>
-        </ul>
-        <h2>It can hurt when</h2>
-        <ul>
-          <li>You isolate the SSID too hard and break local discovery.</li>
-          <li>You split devices and controllers in a way that stops them from seeing each other.</li>
-        </ul>
-        <p>Use segmentation for clarity, not as a random security ritual.</p>
-        """,
-    },
-    "/products/reliable-smart-plugs/": {
-        "title": "Reliable smart plugs",
-        "description": "What actually makes a smart plug reliable, and which buying patterns avoid the usual Wi-Fi plug headaches.",
-        "section": "Products",
-        "body": """
-        <p>Reliable smart plugs are less about brand hype and more about <strong>protocol fit</strong>, clean onboarding, and whether they behave well in your actual ecosystem.</p>
-        <h2>Buy based on</h2>
-        <ul>
-          <li>Protocol compatibility with your hub/home</li>
-          <li>Stable app/onboarding flow</li>
-          <li>Whether you need energy monitoring</li>
-          <li>Whether you want to avoid stuffing more cheap clients onto Wi-Fi</li>
-        </ul>
-        <h2>Best pattern</h2>
-        <p>If you already have a solid Zigbee or hub-first setup, protocol-native plugs are often better than adding more bargain Wi-Fi devices.</p>
-        """,
-    },
-    "/why-wont-my-smart-plug-connect-to-wifi/": {
-        "title": "Why won't my smart plug connect to Wi-Fi?",
-        "description": "The fastest way to fix smart plugs that refuse to connect, fail setup, or drop right after pairing.",
-        "section": "Troubleshooting",
-        "body": """
-        <p><strong>Most smart plugs fail for boring reasons:</strong> 5 GHz-only setup, weak 2.4 GHz signal, WPA3 quirks, captive onboarding bugs, or too many retries without a clean reset.</p>
-        <h2>Check these first</h2>
-        <ul>
-          <li>Use the phone on the same 2.4 GHz network the plug will join.</li>
-          <li>Temporarily disable band steering or create a dedicated 2.4 GHz IoT SSID.</li>
-          <li>Move the plug close to the router for setup, then move it back later.</li>
-          <li>Fully reset the plug before trying again.</li>
-        </ul>
-        <h2>Common causes</h2>
-        <ul>
-          <li><strong>5 GHz mismatch:</strong> many plugs still only support 2.4 GHz.</li>
-          <li><strong>WPA3 or mixed security weirdness:</strong> some cheaper devices behave better on WPA2/WPA2-WPA3 mixed mode.</li>
-          <li><strong>Weak onboarding signal:</strong> setup succeeds only when the device is near the router.</li>
-          <li><strong>Too many saved credentials:</strong> repeated failed attempts can leave the plug in a weird half-paired state.</li>
-        </ul>
-        <h2>Best next moves</h2>
-        <ul>
-          <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></li>
-          <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Smart home devices keep going offline</a></li>
-          <li><a href='/products/reliable-smart-plugs/'>Reliable smart plugs</a></li>
-        </ul>
-        """,
-    },
-    "/smart-lights-keep-disconnecting/": {
-        "title": "Smart lights keep disconnecting",
-        "description": "How to fix smart bulbs and lights that randomly go offline, lag, or stop responding.",
-        "section": "Troubleshooting",
-        "body": """
-        <p>If smart lights keep dropping, the problem is usually <strong>protocol fit</strong>, <strong>mesh depth</strong>, or <strong>bad power habits</strong>, not just the bulb itself.</p>
-        <h2>Fast diagnosis</h2>
-        <ul>
-          <li><strong>Wi-Fi bulbs:</strong> check RSSI, channel congestion, and 2.4 GHz stability.</li>
-          <li><strong>Zigbee bulbs:</strong> check that you have enough mains-powered repeaters and that the bulbs are not on flaky dimmers.</li>
-          <li><strong>Thread/Matter bulbs:</strong> confirm the border router and controlling app are stable.</li>
-        </ul>
-        <h2>Most common fixes</h2>
-        <ul>
-          <li>Stop cutting power at the wall if the bulb expects constant power.</li>
-          <li>Use smart switches for switched circuits instead of smart bulbs where possible.</li>
-          <li>For Zigbee, add one or two solid repeater devices before blaming the bulbs.</li>
-          <li>For Wi-Fi bulbs, move cheap always-on IoT gear off your main SSID if the network is overloaded.</li>
-        </ul>
-        <h2>Related pages</h2>
-        <ul>
-          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Zigbee vs Z-Wave vs Thread vs Matter</a></li>
-          <li><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></li>
-        </ul>
-        """,
-    },
     "/hubs/best-hub-for-mixed-smart-home/": {
         "title": "Best hub for mixed smart home",
         "description": "How to choose the best hub when you have mixed devices, multiple protocols, and want reliability first.",
@@ -283,6 +173,7 @@ PAGES = {
 
 build_protocol_pages(PAGES=PAGES)
 build_troubleshooting_pages(PAGES=PAGES)
+build_wifi_load_pages(PAGES=PAGES)
 
 
 def body_html(section: str, inner: str) -> str:
