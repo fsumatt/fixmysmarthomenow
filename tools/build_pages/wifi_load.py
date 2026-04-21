@@ -1,25 +1,54 @@
 from __future__ import annotations
 
+from .shared import AFFILIATE_INLINE_DISCLOSURE, product_card
+
 WIFI_LOAD_PAGES = {
     "/wifi-load/too-many-smart-devices-on-wifi/": {
         "title": "Too many smart devices on Wi-Fi",
         "description": "How to tell when your smart home has outgrown a simple all-Wi-Fi approach and what to do next.",
         "section": "Wi-Fi load",
-        "body": """
-        <p>If you have too many smart devices on Wi-Fi, the solution is usually <strong>better network policy and protocol mix</strong>, not just a bigger pile of extenders.</p>
-        <h2>Warning signs</h2>
-        <ul>
-          <li>Devices fail randomly during onboarding</li>
-          <li>Apps lag even though internet speed tests look normal</li>
-          <li>2.4 GHz gear is much less stable than phones and laptops</li>
-        </ul>
-        <h2>What to do</h2>
-        <ul>
-          <li>Move simple always-on devices to Zigbee/Z-Wave/Thread where practical.</li>
-          <li>Create a dedicated IoT SSID.</li>
-          <li>Retire weak ISP routers before buying more random smart devices.</li>
-        </ul>
-        """,
+        "body": (
+        "<p>If you have too many smart devices on Wi-Fi, the solution is usually <strong>better network policy and protocol mix</strong>, not just a bigger pile of extenders.</p>"
+        "<h2>Warning signs</h2>"
+        "<ul>"
+        "  <li>Devices fail randomly during onboarding</li>"
+        "  <li>Apps lag even though internet speed tests look normal</li>"
+        "  <li>2.4 GHz gear is much less stable than phones and laptops</li>"
+        "</ul>"
+        "<h2>What to do</h2>"
+        "<ul>"
+        "  <li>Move simple always-on devices to Zigbee/Z-Wave/Thread where practical.</li>"
+        "  <li>Create a dedicated IoT SSID.</li>"
+        "  <li>Retire weak ISP routers before buying more random smart devices.</li>"
+        "</ul>"
+        "<h2>If you need to buy your way out of part of this</h2>"
+        + AFFILIATE_INLINE_DISCLOSURE
+        + "<div class='grid'>"
+        + product_card(
+            title="Home Assistant Green",
+            best_for="people who need a hub-first path to move simple automations off raw Wi-Fi sprawl",
+            why=[
+                "Lets the house rely less on scattered app-only Wi-Fi devices",
+                "Good long-term upgrade path if the network is already straining",
+            ],
+            caution="Works best if you are willing to think in systems, not just single gadgets.",
+            query="Home Assistant Green",
+            button_label="See hub option on Amazon ↗",
+        )
+        + product_card(
+            title="Third Reality Zigbee Smart Plug",
+            best_for="moving a few always-on automations away from crowded Wi-Fi",
+            why=[
+                "Easy example of shifting simple loads to a better protocol mix",
+                "Helpful when plugs are part of the Wi-Fi congestion problem",
+            ],
+            caution="Requires a compatible Zigbee hub.",
+            query="Third Reality Zigbee Smart Plug",
+            button_label="See Zigbee plug on Amazon ↗",
+        )
+        + "</div>"
+        "<p class='muted'>The goal is not to buy more stuff blindly. It is to reduce Wi-Fi load where it meaningfully improves reliability.</p>"
+        ),
     },
     "/wifi-load/smart-home-separate-ssid/": {
         "title": "Should smart home devices use a separate SSID?",

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from .shared import AFFILIATE_INLINE_DISCLOSURE, product_card
+
 TROUBLESHOOTING_PAGES = {
     "/why-wont-my-smart-bulb-pair/": {
         "title": "Why won't my smart bulb pair?",
@@ -82,29 +84,55 @@ TROUBLESHOOTING_PAGES = {
         "title": "Why won't my smart plug connect to Wi-Fi?",
         "description": "The fastest way to fix smart plugs that refuse to connect, fail setup, or drop right after pairing.",
         "section": "Troubleshooting",
-        "body": """
-        <p><strong>Most smart plugs fail for boring reasons:</strong> 5 GHz-only setup, weak 2.4 GHz signal, WPA3 quirks, captive onboarding bugs, or too many retries without a clean reset.</p>
-        <h2>Check these first</h2>
-        <ul>
-          <li>Use the phone on the same 2.4 GHz network the plug will join.</li>
-          <li>Temporarily disable band steering or create a dedicated 2.4 GHz IoT SSID.</li>
-          <li>Move the plug close to the router for setup, then move it back later.</li>
-          <li>Fully reset the plug before trying again.</li>
-        </ul>
-        <h2>Common causes</h2>
-        <ul>
-          <li><strong>5 GHz mismatch:</strong> many plugs still only support 2.4 GHz.</li>
-          <li><strong>WPA3 or mixed security weirdness:</strong> some cheaper devices behave better on WPA2/WPA2-WPA3 mixed mode.</li>
-          <li><strong>Weak onboarding signal:</strong> setup succeeds only when the device is near the router.</li>
-          <li><strong>Too many saved credentials:</strong> repeated failed attempts can leave the plug in a weird half-paired state.</li>
-        </ul>
-        <h2>Best next moves</h2>
-        <ul>
-          <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></li>
-          <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Smart home devices keep going offline</a></li>
-          <li><a href='/products/reliable-smart-plugs/'>Reliable smart plugs</a></li>
-        </ul>
-        """,
+        "body": (
+        "<p><strong>Most smart plugs fail for boring reasons:</strong> 5 GHz-only setup, weak 2.4 GHz signal, WPA3 quirks, captive onboarding bugs, or too many retries without a clean reset.</p>"
+        "<h2>Check these first</h2>"
+        "<ul>"
+        "  <li>Use the phone on the same 2.4 GHz network the plug will join.</li>"
+        "  <li>Temporarily disable band steering or create a dedicated 2.4 GHz IoT SSID.</li>"
+        "  <li>Move the plug close to the router for setup, then move it back later.</li>"
+        "  <li>Fully reset the plug before trying again.</li>"
+        "</ul>"
+        "<h2>Common causes</h2>"
+        "<ul>"
+        "  <li><strong>5 GHz mismatch:</strong> many plugs still only support 2.4 GHz.</li>"
+        "  <li><strong>WPA3 or mixed security weirdness:</strong> some cheaper devices behave better on WPA2/WPA2-WPA3 mixed mode.</li>"
+        "  <li><strong>Weak onboarding signal:</strong> setup succeeds only when the device is near the router.</li>"
+        "  <li><strong>Too many saved credentials:</strong> repeated failed attempts can leave the plug in a weird half-paired state.</li>"
+        "</ul>"
+        "<h2>If the plug itself is the problem</h2>"
+        + AFFILIATE_INLINE_DISCLOSURE
+        + "<div class='grid'>"
+        + product_card(
+            title="TP-Link Kasa Smart Plug Mini",
+            best_for="people replacing a flaky bargain Wi-Fi plug with something more predictable",
+            why=[
+                "Usually easier onboarding than random no-name Wi-Fi plugs",
+                "Good default replacement when the existing plug is just bad hardware",
+            ],
+            caution="Still part of your Wi-Fi device budget.",
+            query="TP-Link Kasa Smart Plug Mini",
+            button_label="See replacement plug on Amazon ↗",
+        )
+        + product_card(
+            title="Third Reality Zigbee Smart Plug",
+            best_for="homes that already have a Zigbee hub and want to stop adding more Wi-Fi clutter",
+            why=[
+                "Better fit for hub-first smart homes",
+                "Useful when Wi-Fi congestion is part of the original problem",
+            ],
+            caution="Requires a Zigbee hub or coordinator.",
+            query="Third Reality Zigbee Smart Plug",
+            button_label="See Zigbee plug on Amazon ↗",
+        )
+        + "</div>"
+        "<h2>Best next moves</h2>"
+        "<ul>"
+        "  <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></li>"
+        "  <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Smart home devices keep going offline</a></li>"
+        "  <li><a href='/products/reliable-smart-plugs/'>Reliable smart plugs</a></li>"
+        "</ul>"
+        ),
     },
     "/smart-lights-keep-disconnecting/": {
         "title": "Smart lights keep disconnecting",
