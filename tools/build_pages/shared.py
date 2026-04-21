@@ -59,6 +59,16 @@ def shell(title: str, body: str, *, path: str, description: str | None, BASE: st
   <link rel='icon' type='image/png' sizes='48x48' href='/favicon-48.png' />
   <link rel='icon' type='image/png' sizes='192x192' href='/favicon-192.png' />
   <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=G-MDRHMFPM5T'></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', 'G-MDRHMFPM5T');
+  </script>
+
   <style>
     :root {{ --bg:#f8fafc; --text:#111827; --muted:#475569; --card:#ffffff; --border:#e5e7eb; --brand:#0f766e; --brand-dark:#0f172a; --brand-soft:#ccfbf1; --radius:18px; }}
     * {{ box-sizing: border-box; }}
