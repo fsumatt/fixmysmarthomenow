@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 from build_pages.landing import HUBS, build_homepage, build_hubs
 from build_pages.protocols import build_protocol_pages
+from build_pages.troubleshooting import build_troubleshooting_pages
 from build_pages.shared import write, copy_static, shell, body_html
 OUT = ROOT / "site"
 BASE = "https://fixmysmarthomenow.com"
@@ -19,83 +20,6 @@ SITE_NAME = "Fix My Smart Home Now"
 
 PAGES = {
 
-    "/why-wont-my-smart-bulb-pair/": {
-        "title": "Why won't my smart bulb pair?",
-        "description": "The fastest fixes for smart bulbs that refuse to enter pairing mode, fail setup, or disappear during onboarding.",
-        "section": "Troubleshooting",
-        "body": """
-        <p>Smart bulbs usually fail pairing because of <strong>bad reset state</strong>, <strong>wrong protocol expectations</strong>, or <strong>weak onboarding conditions</strong>.</p>
-        <h2>Check these first</h2>
-        <ul>
-          <li>Confirm the bulb is actually reset and blinking in the pattern the manufacturer expects.</li>
-          <li>Make sure you are pairing it to the right thing: Wi-Fi app, Zigbee hub, Matter controller, or Thread border router.</li>
-          <li>Move the bulb close to the controller or hub for first setup.</li>
-          <li>Turn off aggressive automations or old stale device entries before retrying.</li>
-        </ul>
-        <h2>Common mistakes</h2>
-        <ul>
-          <li>Trying to pair a Zigbee bulb directly to Wi-Fi.</li>
-          <li>Assuming Matter means every app can adopt it equally well.</li>
-          <li>Trying the reset sequence too quickly and never fully clearing the bulb.</li>
-        </ul>
-        <h2>Best next clicks</h2>
-        <ul>
-          <li><a href='/smart-lights-keep-disconnecting/'>Smart lights keep disconnecting</a></li>
-          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Protocol comparison</a></li>
-        </ul>
-        """,
-    },
-    "/alexa-device-unresponsive-but-wifi-works/": {
-        "title": "Alexa device unresponsive but Wi-Fi works",
-        "description": "How to fix Alexa devices that say unresponsive even though the network itself looks fine.",
-        "section": "Troubleshooting",
-        "body": """
-        <p>If Alexa says a device is unresponsive while Wi-Fi looks fine, the failure is usually at the <strong>cloud integration</strong>, <strong>skill state</strong>, or <strong>hub bridge</strong> layer, not raw internet access.</p>
-        <h2>Most common causes</h2>
-        <ul>
-          <li>Stale skill/token connections</li>
-          <li>Hub or bridge offline even though the voice assistant is online</li>
-          <li>Device renamed or duplicated in the Alexa graph</li>
-          <li>Cloud vendor outage or sync lag</li>
-        </ul>
-        <h2>Fastest fixes</h2>
-        <ul>
-          <li>Check whether the device still works in its native app or hub.</li>
-          <li>Disable/re-enable the Alexa skill only if the native side still works.</li>
-          <li>Remove duplicates and re-discover if the entity graph is messy.</li>
-        </ul>
-        <h2>Related pages</h2>
-        <ul>
-          <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Devices keep going offline</a></li>
-          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>
-        </ul>
-        """,
-    },
-    "/google-home-device-offline-fix/": {
-        "title": "Google Home device offline fix",
-        "description": "A practical checklist for Google Home and Google Assistant devices that appear offline or stop responding.",
-        "section": "Troubleshooting",
-        "body": """
-        <p>Google Home offline states are often a mix of <strong>local network issues</strong>, <strong>cloud account sync drift</strong>, and <strong>device-vendor integration failures</strong>.</p>
-        <h2>What to check first</h2>
-        <ul>
-          <li>Does the device still work in the native vendor app?</li>
-          <li>Is only one home/room failing, or everything?</li>
-          <li>Did the device switch Wi-Fi bands or networks after a router change?</li>
-        </ul>
-        <h2>Best fixes</h2>
-        <ul>
-          <li>Re-sync linked services only after confirming the native side works.</li>
-          <li>Clean up duplicate home assignments and stale rooms.</li>
-          <li>Fix weak 2.4 GHz policy before blaming Google itself.</li>
-        </ul>
-        <h2>Next clicks</h2>
-        <ul>
-          <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz best practices</a></li>
-          <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Devices keep going offline</a></li>
-        </ul>
-        """,
-    },
     "/wifi-load/too-many-smart-devices-on-wifi/": {
         "title": "Too many smart devices on Wi-Fi",
         "description": "How to tell when your smart home has outgrown a simple all-Wi-Fi approach and what to do next.",
@@ -358,6 +282,7 @@ PAGES = {
 
 
 build_protocol_pages(PAGES=PAGES)
+build_troubleshooting_pages(PAGES=PAGES)
 
 
 def body_html(section: str, inner: str) -> str:
