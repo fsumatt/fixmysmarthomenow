@@ -16,6 +16,7 @@ from build_pages.troubleshooting import build_troubleshooting_pages
 from build_pages.wifi_load import build_wifi_load_pages
 from build_pages.devices import build_device_pages
 from build_pages.products import build_product_pages
+from build_pages.hubs import build_hub_detail_pages
 from build_pages.shared import write, copy_static, shell, body_html
 OUT = ROOT / "site"
 BASE = "https://fixmysmarthomenow.com"
@@ -23,32 +24,6 @@ SITE_NAME = "Fix My Smart Home Now"
 
 PAGES = {
 
-    "/hubs/best-hub-for-mixed-smart-home/": {
-        "title": "Best hub for mixed smart home",
-        "description": "How to choose the best hub when you have mixed devices, multiple protocols, and want reliability first.",
-        "section": "Hubs",
-        "body": """
-        <p>For a mixed smart home, the best hub is the one that reduces protocol sprawl and keeps automations local enough to survive cloud weirdness.</p>
-        <h2>What matters most</h2>
-        <ul>
-          <li>Strong Zigbee/Z-Wave support</li>
-          <li>Good local automation options</li>
-          <li>Stable integrations for your voice assistant and major ecosystems</li>
-          <li>Enough maturity that you are not beta-testing your house</li>
-        </ul>
-        <h2>Good hub patterns</h2>
-        <ul>
-          <li><strong>One main hub + a few bridges:</strong> usually the cleanest for mixed homes.</li>
-          <li><strong>All-Wi-Fi + voice assistant only:</strong> simplest upfront, weakest long-term reliability.</li>
-          <li><strong>Home Assistant-first:</strong> most flexible, but higher setup overhead.</li>
-        </ul>
-        <h2>Related pages</h2>
-        <ul>
-          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Protocol comparison</a></li>
-          <li><a href='/products/reliable-smart-home-hubs/'>Reliable smart home hubs</a></li>
-        </ul>
-        """,
-    },
     "/wifi-load/how-many-devices-can-wifi-handle-smart-home/": {
         "title": "How many devices can Wi-Fi handle for a smart home?",
         "description": "How to tell whether your router is overloaded and what to change before blaming every smart device.",
@@ -248,6 +223,7 @@ build_troubleshooting_pages(PAGES=PAGES)
 build_wifi_load_pages(PAGES=PAGES)
 build_device_pages(PAGES=PAGES)
 build_product_pages(PAGES=PAGES)
+build_hub_detail_pages(PAGES=PAGES)
 
 
 def body_html(section: str, inner: str) -> str:
