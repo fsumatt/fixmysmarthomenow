@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 
 from build_pages.landing import HUBS, build_homepage, build_hubs
+from build_pages.protocols import build_protocol_pages
 from build_pages.shared import write, copy_static, shell, body_html
 OUT = ROOT / "site"
 BASE = "https://fixmysmarthomenow.com"
@@ -93,47 +94,6 @@ PAGES = {
           <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz best practices</a></li>
           <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Devices keep going offline</a></li>
         </ul>
-        """,
-    },
-    "/protocols/matter-vs-zigbee/": {
-        "title": "Matter vs Zigbee",
-        "description": "When Matter is the right bet, when Zigbee is still better, and why they solve different problems.",
-        "section": "Protocols",
-        "body": """
-        <p><strong>Zigbee is still better for big, practical device meshes today.</strong> Matter is better understood as an interoperability layer that can improve onboarding and cross-platform support, but it does not automatically replace Zigbee's mesh maturity.</p>
-        <h2>Use Matter when</h2>
-        <ul>
-          <li>You care about multi-platform support across Apple, Google, Amazon, or Samsung.</li>
-          <li>You are buying newer devices that already have solid Matter support.</li>
-        </ul>
-        <h2>Use Zigbee when</h2>
-        <ul>
-          <li>You want lots of sensors/plugs/lights with strong mesh behavior.</li>
-          <li>You already have a good hub/coordinator.</li>
-        </ul>
-        <h2>Reality check</h2>
-        <p>Matter does not fix bad Wi-Fi, weak border routers, or immature vendor firmware. Zigbee still wins a lot of boring reliability fights.</p>
-        """,
-    },
-    "/protocols/thread-vs-zigbee/": {
-        "title": "Thread vs Zigbee",
-        "description": "How Thread and Zigbee compare for smart home reliability, maturity, and device ecosystem fit.",
-        "section": "Protocols",
-        "body": """
-        <p>Thread is elegant and modern. Zigbee is battle-tested and still more predictable in many real homes. Choose based on ecosystem maturity, not just what sounds newer.</p>
-        <h2>Thread strengths</h2>
-        <ul>
-          <li>Modern IP-based architecture</li>
-          <li>Good fit with Matter and current ecosystem momentum</li>
-        </ul>
-        <h2>Zigbee strengths</h2>
-        <ul>
-          <li>Huge device range</li>
-          <li>Excellent mesh behavior when paired with a solid coordinator</li>
-          <li>Better practical maturity in many categories</li>
-        </ul>
-        <h2>Best simple rule</h2>
-        <p>If you want maximum flexibility and cheap device breadth today, Zigbee is still the safer default. If your ecosystem already has strong Thread border routers and the devices you want are well supported, Thread can be great.</p>
         """,
     },
     "/wifi-load/too-many-smart-devices-on-wifi/": {
@@ -244,27 +204,6 @@ PAGES = {
         <ul>
           <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Zigbee vs Z-Wave vs Thread vs Matter</a></li>
           <li><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></li>
-        </ul>
-        """,
-    },
-    "/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/": {
-        "title": "Zigbee vs Z-Wave vs Thread vs Matter",
-        "description": "Which smart home protocol is actually best for reliability, mixed ecosystems, and future flexibility.",
-        "section": "Protocols",
-        "body": """
-        <p><strong>The short version:</strong> Zigbee is still the best overall workhorse for large device counts, Z-Wave is strong for locks/sensors in the right ecosystem, Thread is promising but still uneven, and Matter is a transport layer story more than a magic reliability fix.</p>
-        <h2>Use Zigbee when</h2>
-        <ul><li>You want lots of inexpensive sensors/plugs and a strong mesh.</li><li>You can commit to a good hub/coordinator.</li></ul>
-        <h2>Use Z-Wave when</h2>
-        <ul><li>You care about locks, security devices, and a more curated device ecosystem.</li><li>You are okay with slightly higher device cost.</li></ul>
-        <h2>Use Thread when</h2>
-        <ul><li>You already have strong Apple/Google/Nest border router support.</li><li>You want modern low-power networking, but you accept ecosystem rough edges.</li></ul>
-        <h2>What Matter actually changes</h2>
-        <p>Matter helps interoperability and onboarding, but it does <strong>not</strong> automatically fix weak Wi-Fi, poor border routers, or bad device firmware.</p>
-        <h2>Best next clicks</h2>
-        <ul>
-          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>
-          <li><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></li>
         </ul>
         """,
     },
@@ -416,6 +355,9 @@ PAGES = {
 
 
 
+
+
+build_protocol_pages(PAGES=PAGES)
 
 
 def body_html(section: str, inner: str) -> str:
