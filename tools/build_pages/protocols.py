@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from .shared import AFFILIATE_INLINE_DISCLOSURE, product_card
+
 PROTOCOL_PAGES = {
     "/protocols/matter-vs-zigbee/": {
         "title": "Matter vs Zigbee",
@@ -46,22 +48,48 @@ PROTOCOL_PAGES = {
         "title": "Zigbee vs Z-Wave vs Thread vs Matter",
         "description": "Which smart home protocol is actually best for reliability, mixed ecosystems, and future flexibility.",
         "section": "Protocols",
-        "body": """
-        <p><strong>The short version:</strong> Zigbee is still the best overall workhorse for large device counts, Z-Wave is strong for locks/sensors in the right ecosystem, Thread is promising but still uneven, and Matter is a transport layer story more than a magic reliability fix.</p>
-        <h2>Use Zigbee when</h2>
-        <ul><li>You want lots of inexpensive sensors/plugs and a strong mesh.</li><li>You can commit to a good hub/coordinator.</li></ul>
-        <h2>Use Z-Wave when</h2>
-        <ul><li>You care about locks, security devices, and a more curated device ecosystem.</li><li>You are okay with slightly higher device cost.</li></ul>
-        <h2>Use Thread when</h2>
-        <ul><li>You already have strong Apple/Google/Nest border router support.</li><li>You want modern low-power networking, but you accept ecosystem rough edges.</li></ul>
-        <h2>What Matter actually changes</h2>
-        <p>Matter helps interoperability and onboarding, but it does <strong>not</strong> automatically fix weak Wi-Fi, poor border routers, or bad device firmware.</p>
-        <h2>Best next clicks</h2>
-        <ul>
-          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>
-          <li><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></li>
-        </ul>
-        """,
+        "body": (
+        "<p><strong>The short version:</strong> Zigbee is still the best overall workhorse for large device counts, Z-Wave is strong for locks/sensors in the right ecosystem, Thread is promising but still uneven, and Matter is a transport layer story more than a magic reliability fix.</p>"
+        "<h2>Use Zigbee when</h2>"
+        "<ul><li>You want lots of inexpensive sensors/plugs and a strong mesh.</li><li>You can commit to a good hub/coordinator.</li></ul>"
+        "<h2>Use Z-Wave when</h2>"
+        "<ul><li>You care about locks, security devices, and a more curated device ecosystem.</li><li>You are okay with slightly higher device cost.</li></ul>"
+        "<h2>Use Thread when</h2>"
+        "<ul><li>You already have strong Apple/Google/Nest border router support.</li><li>You want modern low-power networking, but you accept ecosystem rough edges.</li></ul>"
+        "<h2>What Matter actually changes</h2>"
+        "<p>Matter helps interoperability and onboarding, but it does <strong>not</strong> automatically fix weak Wi-Fi, poor border routers, or bad device firmware.</p>"
+        "<h2>If you already know the house needs a hub</h2>"
+        + AFFILIATE_INLINE_DISCLOSURE
+        + "<div class='grid'>"
+        + product_card(
+            title="Home Assistant Green",
+            best_for="buyers who want a strong mixed-protocol base after deciding Wi-Fi-only is not enough",
+            why=[
+                "Good fit when protocol choice points toward a real hub strategy",
+                "Better long-term flexibility for mixed ecosystems",
+            ],
+            caution="Best for people comfortable with a more serious smart-home foundation.",
+            query="Home Assistant Green",
+            button_label="See hub option on Amazon ↗",
+        )
+        + product_card(
+            title="Aeotec Smart Home Hub",
+            best_for="people who want an easier bridge into a hub-first setup",
+            why=[
+                "Simpler jump than a more DIY-first platform",
+                "Works well when the problem is ecosystem sprawl more than deep customization",
+            ],
+            caution="Less flexible than a Home Assistant-first approach.",
+            query="Aeotec Smart Home Hub",
+            button_label="See hub option on Amazon ↗",
+        )
+        + "</div>"
+        "<h2>Best next clicks</h2>"
+        "<ul>"
+        "  <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>"
+        "  <li><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></li>"
+        "</ul>"
+        ),
     },
 }
 

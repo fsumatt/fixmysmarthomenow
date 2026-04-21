@@ -133,6 +133,7 @@ def shell(title: str, body: str, *, path: str, description: str | None, BASE: st
     {body}
     <footer>
       <p>{SITE_NAME} helps people build smart homes that actually stay connected.</p>
+      <p><a href='/affiliate-disclosure/'>Affiliate disclosure</a> · <a href='/editorial-policy/'>Editorial policy</a></p>
     </footer>
   </div>
 </body>

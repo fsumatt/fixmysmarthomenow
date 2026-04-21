@@ -32,6 +32,8 @@ KEY_PAGES = [
     "/hubs/best-hub-for-mixed-smart-home/",
     "/products/reliable-smart-home-hubs/",
     "/products/reliable-smart-plugs/",
+    "/affiliate-disclosure/",
+    "/editorial-policy/",
 ]
 
 KEY_MARKERS = {
@@ -42,6 +44,8 @@ KEY_MARKERS = {
     "/troubleshooting/smart-home-devices-keep-going-offline/": ["common layer", "Only one room failing"],
     "/wifi-load/too-many-smart-devices-on-wifi/": ["too many smart devices on Wi-Fi", "better network policy and protocol mix"],
     "/products/reliable-smart-home-hubs/": ["short list of hub categories", "Main automation hub + bridges"],
+    "/affiliate-disclosure/": ["Affiliate disclosure", "qualifying purchases"],
+    "/editorial-policy/": ["Editorial policy", "shopping spree"],
 }
 
 

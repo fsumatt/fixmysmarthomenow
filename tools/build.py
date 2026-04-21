@@ -17,6 +17,7 @@ from build_pages.wifi_load import build_wifi_load_pages
 from build_pages.devices import build_device_pages
 from build_pages.products import build_product_pages
 from build_pages.hubs import build_hub_detail_pages
+from build_pages.legal import build_legal_pages
 from build_pages.shared import write, copy_static, shell, body_html
 OUT = ROOT / "site"
 BASE = "https://fixmysmarthomenow.com"
@@ -224,6 +225,7 @@ build_wifi_load_pages(PAGES=PAGES)
 build_device_pages(PAGES=PAGES)
 build_product_pages(PAGES=PAGES)
 build_hub_detail_pages(PAGES=PAGES)
+build_legal_pages(PAGES=PAGES)
 
 
 def body_html(section: str, inner: str) -> str:
