@@ -114,13 +114,13 @@ def build_homepage(*, shell, write, OUT, BASE, SITE_NAME) -> None:
             </section>
             <section class='section'>
               <div class='grid'>
-                <div class='card'><h3 style='margin-top:0'>Why this site exists</h3><p class='muted'>Most smart home advice is fragmented, brand-biased, or useless when things start failing. This site is for reliability-first fixes.</p></div>
-                <div class='card'><h3 style='margin-top:0'>How to use it</h3><p class='muted'>Start with the symptom or decision. We’ll route you to the shortest path instead of making you read random forum threads.</p></div>
-                <div class='card'><h3 style='margin-top:0'>What we optimize for</h3><p class='muted'>Stable connections, compatible systems, fewer ghost devices, and the smallest useful upgrade.</p></div>
+                <div class='card'><h3 style='margin-top:0'>Fix the real problem</h3><p class='muted'>Most smart home advice is fragmented, brand-biased, or useless when things start failing. This site is built to help you find the real failure layer fast.</p></div>
+                <div class='card'><h3 style='margin-top:0'>Start with your situation</h3><p class='muted'>Begin with the symptom, protocol decision, or network bottleneck that actually matches what is going wrong in your house.</p></div>
+                <div class='card'><h3 style='margin-top:0'>Buy only what helps</h3><p class='muted'>The goal is more stable connections, better ecosystem fit, and the smallest useful upgrade, not random gadget churn.</p></div>
               </div>
             </section>
             <section class='section'>
-              <h2 style='margin-top:0'>Main paths</h2>
+              <h2 style='margin-top:0'>Where to start</h2>
               <div class='grid'>
                 {page_card('Protocols', 'Zigbee vs Z-Wave vs Thread vs Matter vs Wi-Fi.', '/protocols/')}
                 {page_card('Troubleshooting', 'Why devices drop, fail to pair, or go offline.', '/troubleshooting/')}
@@ -131,7 +131,7 @@ def build_homepage(*, shell, write, OUT, BASE, SITE_NAME) -> None:
               </div>
             </section>
             <section class='section'>
-              <h2 style='margin-top:0'>First real pages</h2>
+              <h2 style='margin-top:0'>Popular fixes and decisions</h2>
               <div class='grid'>
                 {page_card("Why won't my smart plug connect to Wi-Fi?", 'Fast fixes for one of the most common setup failures.', '/why-wont-my-smart-plug-connect-to-wifi/')}
                 {page_card("Why won't my smart bulb pair?", 'Reset, onboarding, and wrong-protocol pairing mistakes.', '/why-wont-my-smart-bulb-pair/')}

@@ -37,7 +37,7 @@ KEY_PAGES = [
 ]
 
 KEY_MARKERS = {
-    "/": ["Fix Smart Home Reliability", "Main paths"],
+    "/": ["Fix Smart Home Reliability", "Where to start"],
     "/protocols/": ["Protocols", "Thread vs Zigbee"],
     "/troubleshooting/": ["Troubleshooting", "Why won't my smart plug connect to Wi-Fi?"],
     "/hubs/best-hub-for-mixed-smart-home/": ["mixed smart home", "One main hub + a few bridges"],
