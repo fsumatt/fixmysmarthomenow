@@ -22,7 +22,7 @@ TROUBLESHOOTING_PAGES = {
           <li>Assuming Matter means every app can adopt it equally well.</li>
           <li>Trying the reset sequence too quickly and never fully clearing the bulb.</li>
         </ul>
-        <h2>Best next clicks</h2>
+        <h2>Next steps</h2>
         <ul>
           <li><a href='/smart-lights-keep-disconnecting/'>Smart lights keep disconnecting</a></li>
           <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Protocol comparison</a></li>
@@ -48,7 +48,7 @@ TROUBLESHOOTING_PAGES = {
           <li>Disable/re-enable the Alexa skill only if the native side still works.</li>
           <li>Remove duplicates and re-discover if the entity graph is messy.</li>
         </ul>
-        <h2>Related pages</h2>
+        <h2>Next steps</h2>
         <ul>
           <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Devices keep going offline</a></li>
           <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>
@@ -73,7 +73,7 @@ TROUBLESHOOTING_PAGES = {
           <li>Clean up duplicate home assignments and stale rooms.</li>
           <li>Fix weak 2.4 GHz policy before blaming Google itself.</li>
         </ul>
-        <h2>Next clicks</h2>
+        <h2>Next steps</h2>
         <ul>
           <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz best practices</a></li>
           <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Devices keep going offline</a></li>
@@ -126,7 +126,7 @@ TROUBLESHOOTING_PAGES = {
             button_label="See Zigbee plug on Amazon ↗",
         )
         + "</div>"
-        "<h2>Best next moves</h2>"
+        "<h2>Next steps</h2>"
         "<ul>"
         "  <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></li>"
         "  <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Smart home devices keep going offline</a></li>"
@@ -153,7 +153,7 @@ TROUBLESHOOTING_PAGES = {
           <li>For Zigbee, add one or two solid repeater devices before blaming the bulbs.</li>
           <li>For Wi-Fi bulbs, move cheap always-on IoT gear off your main SSID if the network is overloaded.</li>
         </ul>
-        <h2>Related pages</h2>
+        <h2>Next steps</h2>
         <ul>
           <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Zigbee vs Z-Wave vs Thread vs Matter</a></li>
           <li><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></li>

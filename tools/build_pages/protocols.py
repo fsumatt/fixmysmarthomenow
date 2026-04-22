@@ -84,7 +84,7 @@ PROTOCOL_PAGES = {
             button_label="See hub option on Amazon ↗",
         )
         + "</div>"
-        "<h2>Best next clicks</h2>"
+        "<h2>Next steps</h2>"
         "<ul>"
         "  <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>"
         "  <li><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></li>"

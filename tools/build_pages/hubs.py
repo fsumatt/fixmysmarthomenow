@@ -48,7 +48,7 @@ HUB_DETAIL_PAGES = {
             button_label="See hub option on Amazon ↗",
         )
         + "</div>"
-        "<h2>Related pages</h2>"
+        "<h2>Next steps</h2>"
         "<ul>"
         "  <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Protocol comparison</a></li>"
         "  <li><a href='/products/reliable-smart-home-hubs/'>Reliable smart home hubs</a></li>"

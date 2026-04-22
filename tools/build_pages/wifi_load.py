@@ -90,7 +90,7 @@ WIFI_LOAD_PAGES = {
           <li>Prefer Zigbee/Z-Wave/Thread for sensors and simple always-on devices.</li>
           <li>Upgrade weak ISP routers before buying random repeaters.</li>
         </ul>
-        <h2>Related pages</h2>
+        <h2>Next steps</h2>
         <ul>
           <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></li>
           <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Devices keep going offline</a></li>
@@ -110,7 +110,7 @@ WIFI_LOAD_PAGES = {
           <li>Use fixed non-overlapping channels where possible.</li>
           <li>Keep IoT devices on stable signal, not fringe coverage.</li>
         </ul>
-        <h2>Good companion pages</h2>
+        <h2>Next steps</h2>
         <ul>
           <li><a href='/why-wont-my-smart-plug-connect-to-wifi/'>Why won't my smart plug connect?</a></li>
           <li><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></li>
