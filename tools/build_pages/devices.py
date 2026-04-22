@@ -20,7 +20,7 @@ DEVICE_PAGES = {
         "  <li>You only have a handful of Wi-Fi devices.</li>"
         "  <li>You accept vendor lock-in and cloud dependency.</li>"
         "</ul>"
-        "<h2>If you are buying a hub now</h2>"
+        "<h2>If a hub really is the right next step</h2>"
         + AFFILIATE_INLINE_DISCLOSURE
         + "<div class='grid'>"
         + product_card(
@@ -46,10 +46,10 @@ DEVICE_PAGES = {
             button_label="See hub option on Amazon ↗",
         )
         + "</div>"
-        "<h2>Next clicks</h2>"
+        "<h2>Next steps</h2>"
         "<ul>"
-        "  <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>"
-        "  <li><a href='/products/reliable-smart-home-hubs/'>Reliable smart home hubs</a></li>"
+        "  <li><a href='/hubs/best-hub-for-mixed-smart-home/'>If you need the architecture answer, start with the best hub strategy guide</a></li>"
+        "  <li><a href='/products/reliable-smart-home-hubs/'>If you already know you are buying, compare the shortlist of reliable hubs</a></li>"
         "</ul>"
         ),
     },

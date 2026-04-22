@@ -87,6 +87,7 @@ HUBS = {
         <h1 style='margin-top:0'>Devices</h1>
         <p class='lede'>Use this section when you are deciding what kind of hardware belongs in the house, not just which app to tap next.</p>
         <p class='muted'>The right device choice depends on protocol fit, hub strategy, and whether adding another Wi-Fi gadget will actually make the system less stable.</p>
+        <p class='muted'>This is the place to decide whether the fix is better architecture, a different device type, or no new hardware at all.</p>
         <div class='grid'>
           <div class='card'><h3 style='margin-top:0'><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></h3><p class='muted'>Start here if you are trying to decide whether better architecture matters more than buying another standalone device.</p></div>
         </div>
