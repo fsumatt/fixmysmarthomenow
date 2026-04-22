@@ -24,8 +24,8 @@ TROUBLESHOOTING_PAGES = {
         </ul>
         <h2>Next steps</h2>
         <ul>
-          <li><a href='/smart-lights-keep-disconnecting/'>Smart lights keep disconnecting</a></li>
-          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Protocol comparison</a></li>
+          <li><a href='/smart-lights-keep-disconnecting/'>If bulbs stay flaky after pairing, check what makes smart lights disconnect</a></li>
+          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>If you may be pairing to the wrong stack, compare protocols</a></li>
         </ul>
         """,
     },
@@ -50,8 +50,8 @@ TROUBLESHOOTING_PAGES = {
         </ul>
         <h2>Next steps</h2>
         <ul>
-          <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Devices keep going offline</a></li>
-          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>
+          <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>If the problem is wider than Alexa, check the common offline patterns</a></li>
+          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>If the weak point is the bridge layer, choose a better hub strategy</a></li>
         </ul>
         """,
     },
@@ -75,8 +75,8 @@ TROUBLESHOOTING_PAGES = {
         </ul>
         <h2>Next steps</h2>
         <ul>
-          <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz best practices</a></li>
-          <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Devices keep going offline</a></li>
+          <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>If the weak point is Wi-Fi policy, fix 2.4 GHz setup first</a></li>
+          <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>If this is happening across devices, check the broader offline patterns</a></li>
         </ul>
         """,
     },

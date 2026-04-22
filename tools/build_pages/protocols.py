@@ -86,8 +86,8 @@ PROTOCOL_PAGES = {
         + "</div>"
         "<h2>Next steps</h2>"
         "<ul>"
-        "  <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>"
-        "  <li><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></li>"
+        "  <li><a href='/hubs/best-hub-for-mixed-smart-home/'>If protocol sprawl is the real issue, pick a better hub strategy</a></li>"
+        "  <li><a href='/devices/do-i-need-a-smart-home-hub/'>If you still are not sure a hub belongs here, decide that first</a></li>"
         "</ul>"
         ),
     },

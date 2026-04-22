@@ -16,9 +16,9 @@ HUBS = {
           </p>
         </section>
         <div class='grid'>
-          <div class='card'><h3 style='margin-top:0'>Troubleshoot first</h3><p class='muted'>If plugs, lights, or sensors keep failing, start with the symptom.</p><p><a href='/troubleshooting/'>Open troubleshooting →</a></p></div>
-          <div class='card'><h3 style='margin-top:0'>Choose the right protocol</h3><p class='muted'>Zigbee, Z-Wave, Thread, Matter, and Wi-Fi are not interchangeable.</p><p><a href='/protocols/'>Open protocols →</a></p></div>
-          <div class='card'><h3 style='margin-top:0'>Fix the network layer</h3><p class='muted'>Too many cheap Wi-Fi devices can make the whole house feel cursed.</p><p><a href='/wifi-load/'>Open Wi-Fi load →</a></p></div>
+          <div class='card'><h3 style='margin-top:0'>Troubleshoot first</h3><p class='muted'>If plugs, lights, or sensors keep failing, start with the symptom before you assume you need new gear.</p><p><a href='/troubleshooting/'>Go to symptom-first fixes →</a></p></div>
+          <div class='card'><h3 style='margin-top:0'>Choose the right protocol</h3><p class='muted'>Zigbee, Z-Wave, Thread, Matter, and Wi-Fi are not interchangeable, and the wrong fit creates fake device problems.</p><p><a href='/protocols/'>Go to protocol decisions →</a></p></div>
+          <div class='card'><h3 style='margin-top:0'>Fix the network layer</h3><p class='muted'>Too many cheap Wi-Fi devices can make the whole house feel cursed even when the devices themselves are fine.</p><p><a href='/wifi-load/'>Go to Wi-Fi bottlenecks →</a></p></div>
         </div>
         """,
     },
@@ -130,12 +130,12 @@ def build_homepage(*, shell, write, OUT, BASE, SITE_NAME) -> None:
             <section class='section'>
               <h2 style='margin-top:0'>Where to start</h2>
               <div class='grid'>
-                {page_card('Protocols', 'Zigbee vs Z-Wave vs Thread vs Matter vs Wi-Fi.', '/protocols/')}
-                {page_card('Troubleshooting', 'Why devices drop, fail to pair, or go offline.', '/troubleshooting/')}
-                {page_card('Hubs', 'Best hub strategy for mixed smart homes.', '/hubs/')}
-                {page_card('Wi-Fi load', 'How many devices your network can really handle.', '/wifi-load/')}
-                {page_card('Devices', 'Plugs, switches, bulbs, sensors, locks, cameras, bridges.', '/devices/')}
-                {page_card('Products', 'Curated reliability-first product picks.', '/products/')}
+                {page_card('Protocols', 'Use when the real problem is compatibility, ecosystem fit, or choosing the right radio layer.', '/protocols/')}
+                {page_card('Troubleshooting', 'Use when devices drop, fail to pair, or keep going offline.', '/troubleshooting/')}
+                {page_card('Hubs', 'Use when the real problem is app sprawl, bridge chaos, or weak control architecture.', '/hubs/')}
+                {page_card('Wi-Fi load', 'Use when onboarding fails, devices drop in batches, or the router may be the bottleneck.', '/wifi-load/')}
+                {page_card('Devices', 'Use when you need to choose the right kind of hardware before buying.', '/devices/')}
+                {page_card('Products', 'Use after you know buying better gear is actually part of the solution.', '/products/')}
               </div>
             </section>
             <section class='section'>
