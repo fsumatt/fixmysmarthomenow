@@ -56,8 +56,10 @@ HUBS = {
         "description": "Choose a hub strategy that makes mixed smart homes simpler and more reliable.",
         "body": """
         <h1 style='margin-top:0'>Hubs and bridges</h1>
+        <p class='lede'>Use this section when the real problem is ecosystem sprawl, too many apps, or devices that only work well when a bridge or central hub is doing the coordination.</p>
+        <p class='muted'>A good hub strategy should reduce protocol chaos, improve local reliability, and keep your smart home from depending on a pile of fragile cloud handoffs.</p>
         <div class='grid'>
-          <div class='card'><h3 style='margin-top:0'><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></h3><p class='muted'>The hub patterns that reduce chaos instead of adding more of it.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></h3><p class='muted'>Start here if you want one cleaner control layer instead of stacking more vendor apps and bridges at random.</p></div>
         </div>
         """,
     },
@@ -66,10 +68,12 @@ HUBS = {
         "description": "Router stress, 2.4 GHz policy, and how Wi-Fi becomes the hidden problem layer in smart homes.",
         "body": """
         <h1 style='margin-top:0'>Wi-Fi load</h1>
+        <p class='lede'>Use this section when your smart home feels unreliable because the network itself is overloaded, poorly segmented, or forcing too many cheap devices onto Wi-Fi.</p>
+        <p class='muted'>If pairing is inconsistent, devices fall offline in batches, or performance gets worse as you add gear, this is often the layer to check before replacing devices.</p>
         <div class='grid'>
-          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></h3><p class='muted'>How to tell if your network is the bottleneck.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/too-many-smart-devices-on-wifi/'>Too many smart devices on Wi-Fi</a></h3><p class='muted'>When the all-Wi-Fi strategy is becoming the real problem.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></h3><p class='muted'>Basic Wi-Fi policy choices that prevent a lot of dumb failures.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></h3><p class='muted'>Start here if you need to figure out whether the router is the bottleneck.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/too-many-smart-devices-on-wifi/'>Too many smart devices on Wi-Fi</a></h3><p class='muted'>When the all-Wi-Fi strategy itself is becoming the real problem.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></h3><p class='muted'>Basic policy choices that prevent a lot of setup and stability failures.</p></div>
           <div class='card'><h3 style='margin-top:0'><a href='/wifi-load/smart-home-separate-ssid/'>Should smart home devices use a separate SSID?</a></h3><p class='muted'>Segmentation that helps instead of randomly breaking local discovery.</p></div>
         </div>
         """,
@@ -79,8 +83,10 @@ HUBS = {
         "description": "Reliability-first guidance by device type and whether you really need a hub.",
         "body": """
         <h1 style='margin-top:0'>Devices</h1>
+        <p class='lede'>Use this section when you are deciding what kind of hardware belongs in the house, not just which app to tap next.</p>
+        <p class='muted'>The right device choice depends on protocol fit, hub strategy, and whether adding another Wi-Fi gadget will actually make the system less stable.</p>
         <div class='grid'>
-          <div class='card'><h3 style='margin-top:0'><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></h3><p class='muted'>When a hub is the right call and when it is optional.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></h3><p class='muted'>Start here if you are trying to decide whether better architecture matters more than buying another standalone device.</p></div>
         </div>
         """,
     },
@@ -89,9 +95,11 @@ HUBS = {
         "description": "Curated product recommendations for reliability-first smart homes.",
         "body": """
         <h1 style='margin-top:0'>Products</h1>
+        <p class='lede'>This section is for the short list, not a giant gadget catalog. Use it after you understand whether your problem is really protocol fit, Wi-Fi load, or hub strategy.</p>
+        <p class='muted'>Every recommendation here is meant to support a more stable setup, not push you into buying more gear than the problem actually requires.</p>
         <div class='grid'>
-          <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-home-hubs/'>Reliable smart home hubs</a></h3><p class='muted'>A short list of hub strategies and categories worth trusting.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-plugs/'>Reliable smart plugs</a></h3><p class='muted'>Buy based on protocol fit, not random bargain plug piles.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-home-hubs/'>Reliable smart home hubs</a></h3><p class='muted'>Best when the fix is a stronger control layer for a mixed-device home.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-plugs/'>Reliable smart plugs</a></h3><p class='muted'>Best when you need a more trustworthy replacement or want to avoid more cheap Wi-Fi clutter.</p></div>
         </div>
         """,
     },
