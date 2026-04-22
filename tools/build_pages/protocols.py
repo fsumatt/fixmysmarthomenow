@@ -21,6 +21,11 @@ PROTOCOL_PAGES = {
         </ul>
         <h2>Reality check</h2>
         <p>Matter does not fix bad Wi-Fi, weak border routers, or immature vendor firmware. Zigbee still wins a lot of boring reliability fights.</p>
+        <h2>Next steps</h2>
+        <ul>
+          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>If you want the broader protocol decision, compare all the main options</a></li>
+          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>If this choice points toward a central controller, pick the right hub strategy</a></li>
+        </ul>
         """,
     },
     "/protocols/thread-vs-zigbee/": {
@@ -42,6 +47,11 @@ PROTOCOL_PAGES = {
         </ul>
         <h2>Best simple rule</h2>
         <p>If you want maximum flexibility and cheap device breadth today, Zigbee is still the safer default. If your ecosystem already has strong Thread border routers and the devices you want are well supported, Thread can be great.</p>
+        <h2>Next steps</h2>
+        <ul>
+          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>If you want the full protocol picture, compare all the main options</a></li>
+          <li><a href='/devices/do-i-need-a-smart-home-hub/'>If this decision changes your architecture, decide whether a hub belongs in the setup</a></li>
+        </ul>
         """,
     },
     "/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/": {

@@ -28,6 +28,7 @@ HUBS = {
         "body": """
         <h1 style='margin-top:0'>Protocols</h1>
         <p class='lede'>Most smart home pain starts with picking devices that do not fit the network or ecosystem you already have.</p>
+        <p class='muted'>Use these pages when you are trying to separate compatibility problems from Wi-Fi problems and figure out what radio layer the house should really depend on.</p>
         <div class='grid'>
           <div class='card'><h3 style='margin-top:0'><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Zigbee vs Z-Wave vs Thread vs Matter</a></h3><p class='muted'>The real-world tradeoffs for reliability and mixed homes.</p></div>
           <div class='card'><h3 style='margin-top:0'><a href='/protocols/matter-vs-zigbee/'>Matter vs Zigbee</a></h3><p class='muted'>Interoperability promise vs practical mesh maturity.</p></div>
@@ -41,6 +42,7 @@ HUBS = {
         "body": """
         <h1 style='margin-top:0'>Troubleshooting</h1>
         <p class='lede'>Use the shortest symptom-first path instead of reading 20 forum threads.</p>
+        <p class='muted'>If you are not yet sure whether the failure lives in Wi-Fi, protocol choice, cloud integrations, or hub strategy, start here and follow the symptom patterns.</p>
         <div class='grid'>
           <div class='card'><h3 style='margin-top:0'><a href='/why-wont-my-smart-plug-connect-to-wifi/'>Why won't my smart plug connect to Wi-Fi?</a></h3><p class='muted'>Fastest fixes for pairing and setup failures.</p></div>
           <div class='card'><h3 style='margin-top:0'><a href='/why-wont-my-smart-bulb-pair/'>Why won't my smart bulb pair?</a></h3><p class='muted'>Fix bulbs that fail reset, onboarding, or pairing mode.</p></div>
