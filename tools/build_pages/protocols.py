@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .shared import AFFILIATE_INLINE_DISCLOSURE, product_card
+from .shared import AFFILIATE_INLINE_DISCLOSURE, product_card, protocol_stack_visual
 
 PROTOCOL_PAGES = {
     "/protocols/matter-vs-thread/": {
@@ -92,7 +92,8 @@ PROTOCOL_PAGES = {
         "section": "Protocols",
         "body": (
         "<p><strong>The short version:</strong> Zigbee is still the best overall workhorse for large device counts, Z-Wave is strong for locks/sensors in the right ecosystem, Thread is promising but still uneven, and Matter is a transport layer story more than a magic reliability fix.</p>"
-        "<h2>Use Zigbee when</h2>"
+        + protocol_stack_visual()
+        + "<h2>Use Zigbee when</h2>"
         "<ul><li>You want lots of inexpensive sensors/plugs and a strong mesh.</li><li>You can commit to a good hub/coordinator.</li></ul>"
         "<h2>Use Z-Wave when</h2>"
         "<ul><li>You care about locks, security devices, and a more curated device ecosystem.</li><li>You are okay with slightly higher device cost.</li></ul>"

@@ -134,6 +134,9 @@ def shell(title: str, body: str, *, path: str, description: str | None, BASE: st
     .muted,.lede {{ color:var(--muted); }}
     .disclosure {{ font-size:.95rem; color:var(--muted); }}
     article {{ max-width: 820px; }}
+    .explain-visual {{ margin:20px 0 24px; padding:18px; background:linear-gradient(180deg, #ffffff, #f8fafc); border:1px solid var(--border); border-radius:var(--radius); }}
+    .explain-visual svg {{ display:block; width:100%; height:auto; }}
+    .explain-visual figcaption {{ margin-top:10px; font-size:.95rem; color:var(--muted); }}
     h1,h2,h3 {{ line-height:1.2; }}
     footer {{ margin-top:42px; padding:24px 0 10px; color:var(--muted); font-size:.95rem; }}
     @media (max-width: 760px) {{
@@ -195,6 +198,42 @@ def shell(title: str, body: str, *, path: str, description: str | None, BASE: st
 
 def page_card(title: str, desc: str, href: str, cta: str = "Open →") -> str:
     return f"<a class='card' href='{href}' style='text-decoration:none; color:inherit'><h3 style='margin-top:0'>{title}</h3><p class='muted'>{desc}</p><p style='margin-bottom:0; font-weight:700'>{cta}</p></a>"
+
+
+def protocol_stack_visual() -> str:
+    return """
+    <figure class='explain-visual' aria-labelledby='protocol-stack-caption'>
+      <svg viewBox='0 0 900 420' role='img' aria-label='Diagram comparing Zigbee, Z-Wave, Thread, and Matter by smart home layer'>
+        <rect x='20' y='20' width='860' height='70' rx='18' fill='#0f172a'/>
+        <text x='450' y='52' text-anchor='middle' font-size='26' font-weight='700' fill='#ffffff'>What each protocol is best at</text>
+        <text x='450' y='76' text-anchor='middle' font-size='16' fill='#cbd5e1'>Matter sits higher in the stack, while Zigbee, Z-Wave, and Thread describe how devices connect.</text>
+
+        <rect x='40' y='120' width='820' height='110' rx='20' fill='#ccfbf1' stroke='#99f6e4'/>
+        <text x='450' y='154' text-anchor='middle' font-size='24' font-weight='700' fill='#134e4a'>Interoperability and app layer</text>
+        <rect x='310' y='170' width='280' height='40' rx='14' fill='#0f766e'/>
+        <text x='450' y='196' text-anchor='middle' font-size='20' font-weight='700' fill='#ffffff'>Matter</text>
+        <text x='450' y='222' text-anchor='middle' font-size='15' fill='#134e4a'>Best for cross-platform compatibility and onboarding, not for fixing weak networks.</text>
+
+        <rect x='40' y='250' width='820' height='130' rx='20' fill='#ffffff' stroke='#e5e7eb'/>
+        <text x='450' y='282' text-anchor='middle' font-size='24' font-weight='700' fill='#0f172a'>Transport and mesh layer</text>
+
+        <rect x='70' y='300' width='220' height='56' rx='16' fill='#dbeafe' stroke='#bfdbfe'/>
+        <text x='180' y='324' text-anchor='middle' font-size='20' font-weight='700' fill='#1d4ed8'>Zigbee</text>
+        <text x='180' y='344' text-anchor='middle' font-size='14' fill='#1e3a8a'>Best workhorse for large device counts</text>
+
+        <rect x='340' y='300' width='220' height='56' rx='16' fill='#ede9fe' stroke='#ddd6fe'/>
+        <text x='450' y='324' text-anchor='middle' font-size='20' font-weight='700' fill='#6d28d9'>Z-Wave</text>
+        <text x='450' y='344' text-anchor='middle' font-size='14' fill='#4c1d95'>Strong for locks and curated device stacks</text>
+
+        <rect x='610' y='300' width='220' height='56' rx='16' fill='#dcfce7' stroke='#bbf7d0'/>
+        <text x='720' y='324' text-anchor='middle' font-size='20' font-weight='700' fill='#15803d'>Thread</text>
+        <text x='720' y='344' text-anchor='middle' font-size='14' fill='#166534'>Promising modern mesh, but still uneven</text>
+
+        <line x1='450' y1='230' x2='450' y2='250' stroke='#64748b' stroke-width='3' stroke-dasharray='8 8'/>
+      </svg>
+      <figcaption id='protocol-stack-caption'>Use Matter to think about interoperability between ecosystems. Use Zigbee, Z-Wave, or Thread to think about the actual radio and mesh behavior underneath.</figcaption>
+    </figure>
+    """
 
 
 def body_html(section: str, inner: str) -> str:
