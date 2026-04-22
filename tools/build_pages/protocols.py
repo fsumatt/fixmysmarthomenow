@@ -3,6 +3,38 @@ from __future__ import annotations
 from .shared import AFFILIATE_INLINE_DISCLOSURE, product_card
 
 PROTOCOL_PAGES = {
+    "/protocols/matter-vs-thread/": {
+        "title": "Matter vs Thread",
+        "description": "What Matter and Thread each do, why they are not the same thing, and how that confusion creates bad smart home buying decisions.",
+        "section": "Protocols",
+        "body": """
+        <p><strong>Matter and Thread are not competitors.</strong> Matter is the application standard that helps devices work across ecosystems. Thread is one possible network layer some Matter devices use underneath. Confusing them leads people to buy the wrong gear and expect the wrong fix.</p>
+        <h2>Matter answers</h2>
+        <ul>
+          <li>Will this device work across Apple, Google, Amazon, or Samsung more cleanly?</li>
+          <li>Can onboarding and interoperability be less vendor-specific?</li>
+        </ul>
+        <h2>Thread answers</h2>
+        <ul>
+          <li>How are low-power devices networking locally?</li>
+          <li>Do I have a stable border router and enough ecosystem support for this mesh?</li>
+        </ul>
+        <h2>What goes wrong in real homes</h2>
+        <ul>
+          <li>People buy a Matter device and assume they automatically have Thread.</li>
+          <li>People hear "Thread" and assume it guarantees broad cross-platform compatibility.</li>
+          <li>People blame Matter when the actual weak point is a flaky Thread border router.</li>
+        </ul>
+        <h2>Best simple rule</h2>
+        <p>If you care about <strong>cross-platform compatibility</strong>, think about Matter. If you care about <strong>local mesh transport</strong>, think about Thread. Some devices use both, but they solve different layers of the problem.</p>
+        <h2>Next steps</h2>
+        <ul>
+          <li><a href='/protocols/thread-vs-zigbee/'>If the real decision is about the radio layer, compare Thread and Zigbee</a></li>
+          <li><a href='/protocols/matter-vs-zigbee/'>If the buying choice is really Matter versus a mature Zigbee ecosystem, compare those directly</a></li>
+          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>If you want the full architecture picture, compare all the main options</a></li>
+        </ul>
+        """,
+    },
     "/protocols/matter-vs-zigbee/": {
         "title": "Matter vs Zigbee",
         "description": "When Matter is the right bet, when Zigbee is still better, and why they solve different problems.",

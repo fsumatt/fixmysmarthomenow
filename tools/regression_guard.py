@@ -22,6 +22,7 @@ KEY_PAGES = [
     "/alexa-device-unresponsive-but-wifi-works/",
     "/google-home-device-offline-fix/",
     "/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/",
+    "/protocols/matter-vs-thread/",
     "/protocols/matter-vs-zigbee/",
     "/protocols/thread-vs-zigbee/",
     "/wifi-load/too-many-smart-devices-on-wifi/",
@@ -38,7 +39,8 @@ KEY_PAGES = [
 
 KEY_MARKERS = {
     "/": ["Fix Smart Home Reliability", "Where to start"],
-    "/protocols/": ["Protocols", "Thread vs Zigbee"],
+    "/protocols/": ["Protocols", "Matter vs Thread"],
+    "/protocols/matter-vs-thread/": ["Matter and Thread are not competitors", "cross-platform compatibility"],
     "/troubleshooting/": ["Troubleshooting", "Why won't my smart plug connect to Wi-Fi?"],
     "/hubs/best-hub-for-mixed-smart-home/": ["mixed smart home", "One main hub + a few bridges"],
     "/troubleshooting/smart-home-devices-keep-going-offline/": ["common layer", "Only one room failing"],

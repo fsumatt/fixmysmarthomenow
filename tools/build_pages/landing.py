@@ -33,6 +33,7 @@ HUBS = {
           <div class='card'><h3 style='margin-top:0'><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Zigbee vs Z-Wave vs Thread vs Matter</a></h3><p class='muted'>The real-world tradeoffs for reliability and mixed homes.</p></div>
           <div class='card'><h3 style='margin-top:0'><a href='/protocols/matter-vs-zigbee/'>Matter vs Zigbee</a></h3><p class='muted'>Interoperability promise vs practical mesh maturity.</p></div>
           <div class='card'><h3 style='margin-top:0'><a href='/protocols/thread-vs-zigbee/'>Thread vs Zigbee</a></h3><p class='muted'>Newer architecture versus battle-tested device depth.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/protocols/matter-vs-thread/'>Matter vs Thread</a></h3><p class='muted'>The architecture gap people confuse most often when buying newer gear.</p></div>
         </div>
         """,
     },
@@ -149,6 +150,7 @@ def build_homepage(*, shell, write, OUT, BASE, SITE_NAME) -> None:
                 {page_card('Smart lights keep disconnecting', 'Find out whether the real problem is protocol, mesh depth, or Wi-Fi.', '/smart-lights-keep-disconnecting/')}
                 {page_card('Zigbee vs Z-Wave vs Thread vs Matter', 'Pick the right protocol before buying the wrong gear.', '/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/')}
                 {page_card('Matter vs Zigbee', 'Interoperability promise versus practical mesh maturity.', '/protocols/matter-vs-zigbee/')}
+                {page_card('Matter vs Thread', 'The standard versus the transport layer, without the usual confusion.', '/protocols/matter-vs-thread/')}
                 {page_card('Best hub for mixed smart home', 'The hub patterns that make mixed ecosystems manageable.', '/hubs/best-hub-for-mixed-smart-home/')}
                 {page_card('Too many smart devices on Wi‑Fi', 'When Wi-Fi itself is becoming the hidden bottleneck.', '/wifi-load/too-many-smart-devices-on-wifi/')}
                 {page_card('Should smart home devices use a separate SSID?', 'Segmentation that helps instead of breaking discovery.', '/wifi-load/smart-home-separate-ssid/')}

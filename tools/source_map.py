@@ -23,6 +23,7 @@ MAP: dict[str, dict[str, object]] = {
     "/google-home-device-offline-fix/": {"source": "tools/build_pages/troubleshooting.py", "type": "generator-page", "markers": ["cloud account sync drift", "native vendor app"]},
     "/troubleshooting/smart-home-devices-keep-going-offline/": {"source": "tools/build_pages/troubleshooting.py", "type": "generator-page", "markers": ["common layer", "shared failure layer"]},
     "/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/": {"source": "tools/build_pages/protocols.py", "type": "generator-page", "markers": ["Zigbee is still the best overall workhorse", "Matter helps interoperability"]},
+    "/protocols/matter-vs-thread/": {"source": "tools/build_pages/protocols.py", "type": "generator-page", "markers": ["Matter and Thread are not competitors", "cross-platform compatibility"]},
     "/protocols/matter-vs-zigbee/": {"source": "tools/build_pages/protocols.py", "type": "generator-page", "markers": ["Zigbee is still better", "interoperability layer"]},
     "/protocols/thread-vs-zigbee/": {"source": "tools/build_pages/protocols.py", "type": "generator-page", "markers": ["Thread is elegant and modern", "battle-tested"]},
     "/wifi-load/how-many-devices-can-wifi-handle-smart-home/": {"source": "tools/build_pages/wifi_load.py", "type": "generator-page", "markers": ["There is no single device limit", "router is overloaded"]},
