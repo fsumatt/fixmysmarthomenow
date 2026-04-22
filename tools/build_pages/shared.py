@@ -30,14 +30,21 @@ def copy_static(*, ROOT: Path, OUT: Path) -> None:
 
 
 def nav() -> str:
-    return """<nav>
-        <a href='/start/'>Start</a>
+    links = """<a href='/start/'>Start</a>
         <a href='/protocols/'>Protocols</a>
         <a href='/troubleshooting/'>Troubleshooting</a>
         <a href='/hubs/'>Hubs</a>
         <a href='/wifi-load/'>Wi-Fi load</a>
         <a href='/devices/'>Devices</a>
-        <a href='/products/'>Products</a>
+        <a href='/products/'>Products</a>"""
+    return f"""<nav class='site-nav' aria-label='Primary'>
+        <div class='nav-desktop' id='siteNav'>
+          {links}
+        </div>
+        <button class='menu-toggle' type='button' aria-expanded='false' aria-controls='mobileNav' aria-label='Open menu'>☰</button>
+      </nav>
+      <nav class='nav-mobile' id='mobileNav' aria-label='Mobile'>
+        {links}
       </nav>"""
 
 
@@ -103,13 +110,20 @@ def shell(title: str, body: str, *, path: str, description: str | None, BASE: st
     body {{ font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif; margin:0; color:var(--text); background:var(--bg); line-height:1.6; }}
     a {{ color:#0f766e; }}
     .wrap {{ max-width: 1100px; margin: 0 auto; padding: 24px; }}
-    header {{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:10px 0 20px; }}
-    .brandmark {{ text-decoration:none; color:inherit; }}
+    header {{ position:sticky; top:0; z-index:50; margin:0 calc(50% - 50vw) 20px; background:rgba(248,250,252,.94); backdrop-filter: blur(10px); border-bottom:1px solid var(--border); }}
+    .header-inner {{ max-width: 1100px; margin:0 auto; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }}
+    .brandmark {{ text-decoration:none; color:inherit; flex:1 1 auto; min-width:0; }}
     .brandwrap {{ display:flex; align-items:center; gap:10px; min-width:0; }}
     .logo {{ width:36px; height:36px; display:block; border-radius:10px; }}
     .brandtext {{ font-weight:800; color:var(--brand-dark); font-size:1.05rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }}
-    nav {{ display:flex; gap:14px; flex-wrap:wrap; }}
-    nav a {{ text-decoration:none; color:var(--muted); font-weight:600; }}
+    .site-nav {{ display:flex; align-items:center; justify-content:flex-end; }}
+    .nav-desktop {{ display:flex; gap:24px; align-items:center; flex-wrap:wrap; }}
+    .site-nav a, .nav-mobile a {{ text-decoration:none; color:var(--muted); font-weight:600; }}
+    .site-nav a:hover, .nav-mobile a:hover {{ color:var(--brand-dark); }}
+    .menu-toggle {{ display:none; border:1px solid var(--border); background:var(--card); color:var(--brand-dark); border-radius:12px; padding:10px 12px; font-size:1rem; font-weight:700; cursor:pointer; }}
+    .nav-mobile {{ display:none; width:100%; padding-top:12px; border-top:1px solid var(--border); }}
+    .nav-mobile a {{ display:block; padding:10px 0; }}
+    header[data-open='true'] .nav-mobile {{ display:block; }}
     .hero {{ background: linear-gradient(135deg, var(--brand-dark), #155e75); color:white; padding: 58px 28px; border-radius: calc(var(--radius) + 6px); }}
     .subhead {{ color:#dbeafe; max-width:760px; }}
     .btn {{ display:inline-block; padding:10px 14px; background:var(--brand); color:white; text-decoration:none; border-radius:12px; font-weight:700; }}
@@ -122,20 +136,59 @@ def shell(title: str, body: str, *, path: str, description: str | None, BASE: st
     article {{ max-width: 820px; }}
     h1,h2,h3 {{ line-height:1.2; }}
     footer {{ margin-top:42px; padding:24px 0 10px; color:var(--muted); font-size:.95rem; }}
+    @media (max-width: 760px) {{
+      .wrap {{ padding: 16px; }}
+      .header-inner {{ padding:10px 16px; gap:12px; }}
+      .brandtext {{ font-size:.98rem; }}
+      .nav-desktop {{ display:none; }}
+      .menu-toggle {{ display:inline-flex; align-items:center; justify-content:center; }}
+      .hero {{ padding: 34px 20px; border-radius: 20px; }}
+      .grid {{ grid-template-columns: 1fr; gap: 12px; }}
+      .card {{ padding:16px; }}
+      article {{ max-width: 100%; }}
+    }}
   </style>
 </head>
 <body>
-  <div class='wrap'>
-    <header>
+  <header id='siteHeader' data-open='false'>
+    <div class='header-inner'>
       <a class='brandmark' href='/' aria-label='{SITE_NAME}'>{brandmark(site_name=SITE_NAME)}</a>
       {nav()}
-    </header>
+    </div>
+  </header>
+  <div class='wrap'>
     {body}
     <footer>
       <p>{SITE_NAME} helps people build smart homes that actually stay connected.</p>
       <p><a href='/affiliate-disclosure/'>Affiliate disclosure</a> · <a href='/editorial-policy/'>Editorial policy</a></p>
     </footer>
   </div>
+  <script>
+    (function () {{
+      var header = document.getElementById('siteHeader');
+      var toggle = document.querySelector('.menu-toggle');
+      var mobileNav = document.getElementById('mobileNav');
+      var desktopNav = document.getElementById('siteNav');
+      var path = window.location.pathname;
+      function markActive(nav) {{
+        if (!nav) return;
+        nav.querySelectorAll('a[href]').forEach(function (link) {{
+          var href = link.getAttribute('href');
+          if (href && href !== '/' && path.startsWith(href)) link.setAttribute('aria-current', 'page');
+          else if (href === '/' && path === '/') link.setAttribute('aria-current', 'page');
+        }});
+      }}
+      markActive(desktopNav);
+      markActive(mobileNav);
+      if (toggle && header) {{
+        toggle.addEventListener('click', function () {{
+          var open = header.getAttribute('data-open') === 'true';
+          header.setAttribute('data-open', open ? 'false' : 'true');
+          toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+        }});
+      }}
+    }})();
+  </script>
 </body>
 </html>"""
 
