@@ -21,7 +21,11 @@ LEGAL_PAGES = {
           <li>Recommendations are meant to stay tied to the actual use case on the page.</li>
           <li>Products should not be recommended just to increase link count.</li>
         </ul>
-        <p>Related page: <a href='/editorial-policy/'>Editorial policy</a>.</p>
+        <h2>Next steps</h2>
+        <ul>
+          <li><a href='/editorial-policy/'>Read the editorial policy</a></li>
+          <li><a href='/products/'>Browse curated product picks</a></li>
+        </ul>
         """,
     },
     "/editorial-policy/": {
@@ -45,7 +49,11 @@ LEGAL_PAGES = {
         </ul>
         <h2>Affiliate relationship</h2>
         <p>Some pages include affiliate links. When they do, the recommendation should still be explained in plain language and tied to the problem the page is solving.</p>
-        <p>Related page: <a href='/affiliate-disclosure/'>Affiliate disclosure</a>.</p>
+        <h2>Next steps</h2>
+        <ul>
+          <li><a href='/affiliate-disclosure/'>Read the affiliate disclosure</a></li>
+          <li><a href='/start/'>Go to the start page</a></li>
+        </ul>
         """,
     },
 }

@@ -9,6 +9,7 @@ PRODUCT_PAGES = {
         "section": "Products",
         "body": (
         "<p>This is not a giant hub catalog. It is the short list of hub categories worth considering if you care about stable mixed-device smart homes.</p>"
+        "<p class='muted'>Use this page after you have already decided that better control architecture, not more random gadgets, is the real answer.</p>"
         "<h2>Recommended patterns</h2>"
         "<ul>"
         "  <li><strong>Main automation hub + bridges:</strong> best overall for mixed homes.</li>"
@@ -72,6 +73,7 @@ PRODUCT_PAGES = {
         "section": "Products",
         "body": (
         "<p>Reliable smart plugs are less about brand hype and more about <strong>protocol fit</strong>, clean onboarding, and whether they behave well in your actual ecosystem.</p>"
+        "<p class='muted'>If the real problem is overloaded Wi-Fi or the wrong protocol mix, buying another cheap plug will not save the setup.</p>"
         "<h2>Buy based on</h2>"
         "<ul>"
         "  <li>Protocol compatibility with your hub/home</li>"

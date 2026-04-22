@@ -52,7 +52,7 @@ def brandmark(*, site_name: str) -> str:
     return f"""<div class='brandwrap'><img class='logo' src='/assets/brand/ndz-mark-48.png' width='36' height='36' alt='' aria-hidden='true' decoding='async' /><span class='brandtext'>{site_name}</span></div>"""
 
 
-AFFILIATE_INLINE_DISCLOSURE = "<p class='disclosure' style='margin:0 0 10px 0'><strong>Disclosure:</strong> As an Amazon Associate, this site may earn from qualifying purchases.</p>"
+AFFILIATE_INLINE_DISCLOSURE = "<p class='disclosure' style='margin:0 0 10px 0'><strong>Disclosure:</strong> As an Amazon Associate, this site may earn from qualifying purchases. These picks are here only when buying the right gear is actually part of the fix.</p>"
 
 
 def amazon_search_link(query: str, *, tag: str | None = None) -> str:

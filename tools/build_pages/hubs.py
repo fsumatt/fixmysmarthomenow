@@ -22,7 +22,7 @@ HUB_DETAIL_PAGES = {
         "  <li><strong>All-Wi-Fi + voice assistant only:</strong> simplest upfront, weakest long-term reliability.</li>"
         "  <li><strong>Home Assistant-first:</strong> most flexible, but higher setup overhead.</li>"
         "</ul>"
-        "<h2>If you already know you need gear</h2>"
+        "<h2>If a stronger hub really is the fix</h2>"
         + AFFILIATE_INLINE_DISCLOSURE
         + "<div class='grid'>"
         + product_card(

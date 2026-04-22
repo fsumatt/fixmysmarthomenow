@@ -58,7 +58,7 @@ PROTOCOL_PAGES = {
         "<ul><li>You already have strong Apple/Google/Nest border router support.</li><li>You want modern low-power networking, but you accept ecosystem rough edges.</li></ul>"
         "<h2>What Matter actually changes</h2>"
         "<p>Matter helps interoperability and onboarding, but it does <strong>not</strong> automatically fix weak Wi-Fi, poor border routers, or bad device firmware.</p>"
-        "<h2>If you already know the house needs a hub</h2>"
+        "<h2>If buying gear is actually the right next step</h2>"
         + AFFILIATE_INLINE_DISCLOSURE
         + "<div class='grid'>"
         + product_card(
