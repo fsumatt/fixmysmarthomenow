@@ -50,8 +50,8 @@ HUB_DETAIL_PAGES = {
         + "</div>"
         "<h2>Next steps</h2>"
         "<ul>"
-        "  <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Protocol comparison</a></li>"
-        "  <li><a href='/products/reliable-smart-home-hubs/'>Reliable smart home hubs</a></li>"
+        "  <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>If you still need to decide the radio stack, compare the main protocols</a></li>"
+        "  <li><a href='/products/reliable-smart-home-hubs/'>If you are ready to buy, compare the shortlist of reliable hub options</a></li>"
         "</ul>"
         ),
     },

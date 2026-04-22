@@ -128,9 +128,9 @@ TROUBLESHOOTING_PAGES = {
         + "</div>"
         "<h2>Next steps</h2>"
         "<ul>"
-        "  <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></li>"
-        "  <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>Smart home devices keep going offline</a></li>"
-        "  <li><a href='/products/reliable-smart-plugs/'>Reliable smart plugs</a></li>"
+        "  <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>If onboarding keeps failing, fix 2.4 GHz setup first</a></li>"
+        "  <li><a href='/troubleshooting/smart-home-devices-keep-going-offline/'>If this is part of a wider pattern, check why devices keep going offline</a></li>"
+        "  <li><a href='/products/reliable-smart-plugs/'>If the hardware itself is weak, compare more reliable smart plugs</a></li>"
         "</ul>"
         ),
     },
@@ -155,8 +155,8 @@ TROUBLESHOOTING_PAGES = {
         </ul>
         <h2>Next steps</h2>
         <ul>
-          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Zigbee vs Z-Wave vs Thread vs Matter</a></li>
-          <li><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>How many devices can Wi-Fi handle?</a></li>
+          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>If the wrong radio layer is causing the pain, compare the main protocols</a></li>
+          <li><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>If Wi-Fi bulbs are part of the mess, check whether the network is overloaded</a></li>
         </ul>
         """,
     },
@@ -173,11 +173,17 @@ TROUBLESHOOTING_PAGES = {
           <li>Only one app/ecosystem failing? Check cloud status and hub health.</li>
           <li>Only one room failing? It is probably coverage or mesh depth.</li>
         </ul>
-        <h2>Reliable next steps</h2>
+        <h2>What to do next</h2>
         <ul>
           <li>Rebooting is fine once. If it keeps returning, fix the root cause.</li>
-          <li>Segment IoT Wi-Fi if your main SSID is noisy or overloaded.</li>
+          <li>If the failures cluster around Wi-Fi devices, segment IoT traffic or clean up 2.4 GHz policy.</li>
+          <li>If the failures cluster around one ecosystem or bridge, check hub and cloud dependency before replacing hardware.</li>
           <li>Reduce dependency on cheap Wi-Fi devices when better protocol options exist.</li>
+        </ul>
+        <h2>Next steps</h2>
+        <ul>
+          <li><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>If Wi-Fi devices are failing in batches, check network load first</a></li>
+          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>If one bridge or ecosystem keeps failing, choose a stronger hub strategy</a></li>
         </ul>
         """,
     },

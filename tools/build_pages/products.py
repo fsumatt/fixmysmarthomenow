@@ -61,9 +61,9 @@ PRODUCT_PAGES = {
         "</ul>"
         "<h2>Next steps</h2>"
         "<ul>"
-        "  <li><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></li>"
-        "  <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Protocol comparison</a></li>"
-        "  <li><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></li>"
+        "  <li><a href='/hubs/best-hub-for-mixed-smart-home/'>If you still are comparing architectures, start with the best hub strategy guide</a></li>"
+        "  <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>If protocol fit is still unclear, compare the main options first</a></li>"
+        "  <li><a href='/devices/do-i-need-a-smart-home-hub/'>If you are not sure a hub belongs in the setup, decide that before buying</a></li>"
         "</ul>"
         ),
     },
@@ -122,9 +122,9 @@ PRODUCT_PAGES = {
         "<p>If you already have a solid Zigbee or hub-first setup, protocol-native plugs are often better than adding more bargain Wi-Fi devices.</p>"
         "<h2>Next steps</h2>"
         "<ul>"
-        "  <li><a href='/why-wont-my-smart-plug-connect-to-wifi/'>Why won't my smart plug connect to Wi-Fi?</a></li>"
-        "  <li><a href='/wifi-load/too-many-smart-devices-on-wifi/'>Too many smart devices on Wi-Fi</a></li>"
-        "  <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>2.4 GHz smart home best practices</a></li>"
+        "  <li><a href='/why-wont-my-smart-plug-connect-to-wifi/'>If setup keeps failing, start with the smart plug troubleshooting guide</a></li>"
+        "  <li><a href='/wifi-load/too-many-smart-devices-on-wifi/'>If Wi-Fi itself is strained, check whether too many devices are on the network</a></li>"
+        "  <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>If onboarding is flaky, tighten 2.4 GHz policy first</a></li>"
         "</ul>"
         ),
     },
