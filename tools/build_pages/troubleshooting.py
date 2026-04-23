@@ -161,29 +161,33 @@ TROUBLESHOOTING_PAGES = {
         """,
     },
     "/troubleshooting/smart-home-devices-keep-going-offline/": {
-        "title": "Smart home devices keep going offline",
-        "description": "A practical checklist for smart home devices that randomly go offline and come back on their own.",
+        "title": "Smart home devices keep going offline? Start with the failure pattern",
+        "description": "A practical checklist for smart home devices that keep going offline, plus how to tell whether the root cause is Wi-Fi, your hub, or the protocol layer.",
         "section": "Troubleshooting",
         "body": """
-        <p>If devices keep going offline, do not start by replacing everything. Start by finding the common layer: Wi-Fi, hub, protocol mesh, power, or cloud dependency.</p>
-        <h2>Find the pattern</h2>
+        <p>If smart home devices keep going offline, do not start by replacing everything. Start by identifying the shared failure pattern, or the common layer behind the dropouts: <strong>Wi-Fi congestion</strong>, <strong>hub or bridge instability</strong>, <strong>weak protocol mesh</strong>, <strong>power problems</strong>, or <strong>cloud dependency</strong>.</p>
+        <h2>Find the symptom pattern first</h2>
         <ul>
-          <li>Only Wi-Fi devices failing? Check your router and 2.4 GHz setup.</li>
-          <li>Only Zigbee devices failing? Check repeater depth and channel overlap.</li>
-          <li>Only one app/ecosystem failing? Check cloud status and hub health.</li>
-          <li>Only one room failing? It is probably coverage or mesh depth.</li>
+          <li><strong>Only Wi-Fi devices dropping:</strong> check your router, 2.4 GHz policy, and overall device load before blaming the devices.</li>
+          <li><strong>Only Zigbee devices dropping:</strong> check repeater depth, channel overlap, and whether the mesh is thin in the room that keeps failing.</li>
+          <li><strong>Only one app, hub, or ecosystem failing:</strong> check bridge health, cloud sync, and whether the native app still works.</li>
+          <li><strong>Only one room failing:</strong> it is usually coverage, interference, or mesh depth, not random bad luck.</li>
+          <li><strong>Devices drop after power flickers or switch toggles:</strong> check smart plugs, bulbs, and hubs for bad power habits before chasing networking ghosts.</li>
         </ul>
         <h2>What to do next</h2>
         <ul>
-          <li>Rebooting is fine once. If it keeps returning, fix the root cause.</li>
-          <li>If the failures cluster around Wi-Fi devices, segment IoT traffic or clean up 2.4 GHz policy.</li>
-          <li>If the failures cluster around one ecosystem or bridge, check hub and cloud dependency before replacing hardware.</li>
-          <li>Reduce dependency on cheap Wi-Fi devices when better protocol options exist.</li>
+          <li>Rebooting is fine once. If the same devices keep dropping, use that temporary recovery as a clue instead of calling it a fix.</li>
+          <li>If failures cluster around Wi-Fi devices, clean up 2.4 GHz settings and decide whether too many low-value devices are sitting on Wi-Fi.</li>
+          <li>If failures cluster around one hub, bridge, or voice ecosystem, verify the native app and hub health before replacing endpoints.</li>
+          <li>If Zigbee or Thread devices are the weak point, improve the mesh before assuming the sensors themselves are bad.</li>
+          <li>If cheap Wi-Fi gear is the recurring problem, route future purchases toward hub-based products or more reliable device categories.</li>
         </ul>
         <h2>Next steps</h2>
         <ul>
-          <li><a href='/wifi-load/how-many-devices-can-wifi-handle-smart-home/'>If Wi-Fi devices are failing in batches, check network load first</a></li>
+          <li><a href='/wifi-load/too-many-smart-devices-on-wifi/'>If the symptoms look like Wi-Fi overload, check whether too many smart devices are sitting on Wi-Fi</a></li>
           <li><a href='/hubs/best-hub-for-mixed-smart-home/'>If one bridge or ecosystem keeps failing, choose a stronger hub strategy</a></li>
+          <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>If the root issue is protocol fit, compare Zigbee, Z-Wave, Thread, and Matter before buying replacements</a></li>
+          <li><a href='/products/reliable-smart-home-hubs/'>If your current hub is the weak point, compare more reliable smart home hubs</a></li>
         </ul>
         """,
     },
