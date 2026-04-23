@@ -99,6 +99,43 @@ PRODUCT_PAGES = {
             query="Echo 4th generation",
         )
         + "</div>"
+        "<h2>Boring support gear that can still improve reliability</h2>"
+        "<p>These are not the stars of the smart-home story, but they are exactly the kind of boring setup gear that can help a cleaner control-layer rollout. They are also a reasonable place to capture relevant Amazon Basics promo coverage without diluting the site.</p>"
+        + "<div class='grid'>"
+        + product_card(
+            title="Amazon Basics Cat 6 Ethernet Patch Cable",
+            best_for="hardwiring Apple TV, hubs, bridges, or nearby control gear that should not be competing on weak Wi-Fi if it can avoid it",
+            why=[
+                "Useful when the smartest upgrade is making a control device less dependent on flaky wireless conditions",
+                "Cheap, boring, and often more helpful than buying a more complicated gadget",
+                "Good fit for hub shelves, media cabinets, and Apple TV based Apple Home setups",
+            ],
+            caution="Only helps when the device and room layout actually support wired backhaul cleanly.",
+            query="Amazon Basics Cat 6 Ethernet Patch Cable",
+        )
+        + product_card(
+            title="Amazon Basics AA Rechargeable Batteries",
+            best_for="homes accumulating remotes, sensors, locks, and accessories that quietly become a battery-management annoyance",
+            why=[
+                "Useful support gear for keeping a growing smart home maintained more cheaply",
+                "Makes more sense than burning through disposable batteries if the home has many accessories",
+                "A good boring add-on when the setup has enough battery-powered devices to justify it",
+            ],
+            caution="Best where battery-powered accessories are already part of the setup, not as a reason to buy extra gadgets.",
+            query="Amazon Basics AA Rechargeable Batteries",
+        )
+        + product_card(
+            title="Amazon Basics Surge Protector Power Strip",
+            best_for="hub shelves and media-console areas where bridges, controllers, and networking gear are piling up in one place",
+            why=[
+                "Useful when the control layer is physically expanding into one equipment zone",
+                "Helps support the boring infrastructure around hubs and bridges",
+                "Makes sense as support gear, not as a headline smart-home purchase",
+            ],
+            caution="Does not fix bad architecture by itself, it just supports cleaner setup around the gear you already chose.",
+            query="Amazon Basics Surge Protector Power Strip",
+        )
+        + "</div>"
         "<h2>What is missing today, and where this page should grow</h2>"
         "<p>The site should eventually add stronger product coverage for:</p>"
         "<ul>"
