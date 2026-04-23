@@ -2,6 +2,15 @@ from __future__ import annotations
 
 from .shared import AFFILIATE_INLINE_DISCLOSURE, product_card
 
+
+def compatibility_table(*, headers: list[str], rows: list[list[str]]) -> str:
+    head = ''.join(f"<th style='text-align:left; padding:10px; border-bottom:1px solid var(--border)'>{h}</th>" for h in headers)
+    body_rows = []
+    for row in rows:
+        cells = ''.join(f"<td style='padding:10px; border-bottom:1px solid var(--border); vertical-align:top'>{cell}</td>" for cell in row)
+        body_rows.append(f"<tr>{cells}</tr>")
+    return "<div class='card' style='overflow-x:auto'><table style='width:100%; border-collapse:collapse'>" + f"<thead><tr>{head}</tr></thead><tbody>{''.join(body_rows)}</tbody></table></div>"
+
 PRODUCT_PAGES = {
     "/products/reliable-smart-home-hubs/": {
         "title": "Reliable smart home hubs",
@@ -173,6 +182,79 @@ PRODUCT_PAGES = {
         "  <li><a href='/why-wont-my-smart-plug-connect-to-wifi/'>If setup keeps failing, start with the smart plug troubleshooting guide</a></li>"
         "  <li><a href='/wifi-load/too-many-smart-devices-on-wifi/'>If Wi-Fi itself is strained, check whether too many devices are on the network</a></li>"
         "  <li><a href='/wifi-load/2-4ghz-smart-home-best-practices/'>If onboarding is flaky, tighten 2.4 GHz policy first</a></li>"
+        "</ul>"
+        ),
+    },
+    "/products/reliable-smart-dimmers-and-switches/": {
+        "title": "Reliable smart dimmers and switches",
+        "description": "How to choose reliable smart dimmers and switches without creating neutral-wire, ecosystem, or Wi-Fi headaches.",
+        "section": "Products",
+        "body": (
+        "<p>Smart dimmers and switches are often a better long-term answer than stacking more bulbs, because they solve the control problem at the wall instead of adding more fragile app-only endpoints.</p>"
+        "<p class='muted'>They are also easier to buy badly. Neutral wire requirements, ecosystem fit, hub fit, and dimmer compatibility matter a lot more here than in casual gadget roundups.</p>"
+        "<h2>What matters most before you buy</h2>"
+        "<ul>"
+        "  <li><strong>Neutral wire requirements:</strong> some good switches need one, some are built to work without it.</li>"
+        "  <li><strong>Protocol fit:</strong> Wi-Fi, Zigbee, Z-Wave, and ecosystem-native options behave very differently.</li>"
+        "  <li><strong>Ecosystem role:</strong> Apple Home, Alexa, and Google Home compatibility matter, but are not the whole story.</li>"
+        "  <li><strong>Bulb strategy:</strong> smart switches and smart bulbs can conflict if you mix them carelessly.</li>"
+        "</ul>"
+        "<h2>Fast compatibility guide</h2>"
+        + compatibility_table(
+            headers=["Need / situation", "Best fit", "Watch out for"],
+            rows=[
+                ["Already have a serious hub and want the strongest wall-control reliability", "Zigbee or Z-Wave dimmers/switches", "Confirm neutral wire and hub support before buying"],
+                ["Mostly Apple, Alexa, or Google and want the easiest mainstream path", "Ecosystem-friendly smart switch lines", "Easy compatibility is not the same thing as best long-term architecture"],
+                ["Trying to avoid stuffing more gear onto Wi-Fi", "Protocol-native hub-first switches", "Requires a real hub strategy, not just app compatibility"],
+                ["Need a renter-friendly or no-electrical-work path", "Smart plugs or lamps may be safer than in-wall gear", "Do not force in-wall smart switches where the electrical situation does not support them"],
+            ],
+        )
+        + "<h2>Best picks by scenario</h2>"
+        + AFFILIATE_INLINE_DISCLOSURE
+        + "<div class='grid'>"
+        + product_card(
+            title="Lutron Caseta Smart Dimmer Starter Kit",
+            best_for="buyers who want one of the safest mainstream dimmer paths with strong reliability and broad ecosystem support",
+            why=[
+                "Excellent reputation for boring reliability, which is exactly what you want from wall controls",
+                "Strong fit for people who care more about stability than protocol purity",
+                "Useful when you want dimmers to feel invisible instead of experimental",
+            ],
+            caution="Requires buying into the Caseta bridge path, which is often worth it but still matters architecturally.",
+            query="Lutron Caseta Smart Dimmer Starter Kit",
+        )
+        + product_card(
+            title="Leviton Decora Smart Dimmer",
+            best_for="buyers who want a strong mainstream wall-switch brand and a simpler consumer-facing setup path",
+            why=[
+                "Recognizable electrical brand with broad smart-home awareness",
+                "Good fit for homes that want a polished mainstream switch path",
+                "Useful when wall controls are the real fix, not more bulbs",
+            ],
+            caution="Check the exact protocol/ecosystem version before buying because the Decora family spans multiple smart-home approaches.",
+            query="Leviton Decora Smart Dimmer",
+        )
+        + product_card(
+            title="Inovelli smart dimmer switch",
+            best_for="buyers who already know they want a more serious hub-first dimmer strategy",
+            why=[
+                "Strong fit for people who actually care about protocol depth and hub integration",
+                "Good for homes moving beyond app-only convenience",
+                "Useful when the switch layer needs to match a more deliberate architecture",
+            ],
+            caution="Best when you already understand your hub/protocol plan and electrical requirements.",
+            query="Inovelli smart dimmer switch",
+        )
+        + "</div>"
+        "<h2>Best buying pattern</h2>"
+        "<p>If you want the least drama, buy smart dimmers and switches the same way you should buy hubs: for the architecture you actually have, not for abstract feature lists. In many homes, a bridge-based or hub-first switch strategy is more stable than treating every wall control like just another Wi-Fi gadget.</p>"
+        "<h2>When not to buy them yet</h2>"
+        "<p>If you are still unclear on whether the house should be Apple-first, Alexa-first, Google-first, or hub-first, solve that question before buying a bunch of in-wall devices. Wall controls lock in more architecture than bulbs and plugs do.</p>"
+        "<h2>Next steps</h2>"
+        "<ul>"
+        "  <li><a href='/devices/do-i-need-a-smart-home-hub-if-i-already-have-alexa-google-home-or-homekit/'>If you are still figuring out whether your current ecosystem is enough, decide that first</a></li>"
+        "  <li><a href='/products/reliable-smart-home-hubs/'>If wall controls need to fit a stronger overall architecture, compare the hub shortlist</a></li>"
+        "  <li><a href='/protocols/hub-vs-bridge-vs-controller-vs-border-router/'>If terminology confusion is muddying the choice, use the terminology guide</a></li>"
         "</ul>"
         ),
     },

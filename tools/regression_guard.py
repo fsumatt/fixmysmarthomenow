@@ -38,6 +38,7 @@ KEY_PAGES = [
     "/hubs/best-hub-for-mixed-smart-home/",
     "/products/reliable-smart-home-hubs/",
     "/products/reliable-smart-plugs/",
+    "/products/reliable-smart-dimmers-and-switches/",
     "/affiliate-disclosure/",
     "/editorial-policy/",
 ]
@@ -56,6 +57,7 @@ KEY_MARKERS = {
     "/devices/do-i-need-a-smart-home-hub-if-i-already-have-alexa-google-home-or-homekit/": ["Having Alexa, Google Home, or Apple Home does not automatically mean", "real hub underneath, ecosystem on top"],
     "/protocols/hub-vs-bridge-vs-controller-vs-border-router/": ["Hub, bridge, controller, and border router are not interchangeable terms", "ecosystem on top, real hub underneath"],
     "/products/reliable-smart-home-hubs/": ["true automation hubs", "Hub-adjacent ecosystem controllers"],
+    "/products/reliable-smart-dimmers-and-switches/": ["Smart dimmers and switches are often a better long-term answer", "Fast compatibility guide"],
     "/affiliate-disclosure/": ["Affiliate disclosure", "qualifying purchases"],
     "/editorial-policy/": ["Editorial policy", "shopping spree"],
 }

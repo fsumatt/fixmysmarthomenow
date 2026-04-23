@@ -38,6 +38,7 @@ MAP: dict[str, dict[str, object]] = {
     "/devices/do-i-need-a-smart-home-hub-if-i-already-have-alexa-google-home-or-homekit/": {"source": "tools/build_pages/devices.py", "type": "generator-page", "markers": ["Having Alexa, Google Home, or Apple Home does not automatically mean", "real hub underneath, ecosystem on top"]},
     "/products/reliable-smart-home-hubs/": {"source": "tools/build_pages/products.py", "type": "generator-page", "markers": ["short list of hub categories", "local control options"]},
     "/products/reliable-smart-plugs/": {"source": "tools/build_pages/products.py", "type": "generator-page", "markers": ["Reliable smart plugs", "protocol fit"]},
+    "/products/reliable-smart-dimmers-and-switches/": {"source": "tools/build_pages/products.py", "type": "generator-page", "markers": ["Smart dimmers and switches are often a better long-term answer", "Fast compatibility guide"]},
     "/hubs/best-hub-for-mixed-smart-home/": {"source": "tools/build_pages/hubs.py", "type": "generator-page", "markers": ["mixed smart home", "One main hub + a few bridges"]},
     "/affiliate-disclosure/": {"source": "tools/build_pages/legal.py", "type": "generator-page", "markers": ["Affiliate disclosure", "qualifying purchases"]},
     "/editorial-policy/": {"source": "tools/build_pages/legal.py", "type": "generator-page", "markers": ["Editorial policy", "shopping spree"]},

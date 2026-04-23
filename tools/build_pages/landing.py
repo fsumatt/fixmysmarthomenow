@@ -145,6 +145,7 @@ HUBS = {
         <div class='grid'>
           <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-home-hubs/'>Reliable smart home hubs</a></h3><p class='muted'>Best when the fix is a stronger control layer for a mixed-device home, and when you need to understand true hubs versus ecosystem controllers.</p></div>
           <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-plugs/'>Reliable smart plugs</a></h3><p class='muted'>Best when you need a more trustworthy replacement or want to avoid adding more cheap Wi-Fi clutter.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-dimmers-and-switches/'>Reliable smart dimmers and switches</a></h3><p class='muted'>Best when the real fix belongs at the wall switch, not in another random bulb or app.</p></div>
         </div>
         <h2>Use products only after the architecture is clear</h2>
         <ul>
