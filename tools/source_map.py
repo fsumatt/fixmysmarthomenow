@@ -31,6 +31,7 @@ MAP: dict[str, dict[str, object]] = {
     "/wifi-load/too-many-smart-devices-on-wifi/": {"source": "tools/build_pages/wifi_load.py", "type": "generator-page", "markers": ["too many smart devices on Wi-Fi", "all-Wi-Fi strategy"]},
     "/wifi-load/smart-home-separate-ssid/": {"source": "tools/build_pages/wifi_load.py", "type": "generator-page", "markers": ["separate SSID", "local discovery"]},
     "/devices/do-i-need-a-smart-home-hub/": {"source": "tools/build_pages/devices.py", "type": "generator-page", "markers": ["You need a hub when", "cloud dependency"]},
+    "/devices/is-alexa-a-smart-home-hub/": {"source": "tools/build_pages/devices.py", "type": "generator-page", "markers": ["Alexa can act like part of a smart home hub setup", "one real hub plus Alexa on top"]},
     "/products/reliable-smart-home-hubs/": {"source": "tools/build_pages/products.py", "type": "generator-page", "markers": ["short list of hub categories", "local control options"]},
     "/products/reliable-smart-plugs/": {"source": "tools/build_pages/products.py", "type": "generator-page", "markers": ["Reliable smart plugs", "protocol fit"]},
     "/hubs/best-hub-for-mixed-smart-home/": {"source": "tools/build_pages/hubs.py", "type": "generator-page", "markers": ["mixed smart home", "One main hub + a few bridges"]},
