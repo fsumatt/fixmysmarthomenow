@@ -55,7 +55,7 @@ KEY_MARKERS = {
     "/devices/is-apple-home-a-smart-home-hub/": ["Apple Home can be part of a smart home hub strategy", "experience layer"],
     "/devices/do-i-need-a-smart-home-hub-if-i-already-have-alexa-google-home-or-homekit/": ["Having Alexa, Google Home, or Apple Home does not automatically mean", "real hub underneath, ecosystem on top"],
     "/protocols/hub-vs-bridge-vs-controller-vs-border-router/": ["Hub, bridge, controller, and border router are not interchangeable terms", "ecosystem on top, real hub underneath"],
-    "/products/reliable-smart-home-hubs/": ["short list of hub categories", "Main automation hub + bridges"],
+    "/products/reliable-smart-home-hubs/": ["true automation hubs", "Hub-adjacent ecosystem controllers"],
     "/affiliate-disclosure/": ["Affiliate disclosure", "qualifying purchases"],
     "/editorial-policy/": ["Editorial policy", "shopping spree"],
 }

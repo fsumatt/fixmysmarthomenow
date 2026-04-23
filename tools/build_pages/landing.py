@@ -27,14 +27,27 @@ HUBS = {
         "description": "Choose the right smart home protocol before you buy the wrong gear for your setup.",
         "body": """
         <h1 style='margin-top:0'>Protocols</h1>
-        <p class='lede'>Most smart home pain starts with picking devices that do not fit the network or ecosystem you already have.</p>
-        <p class='muted'>Use these pages when you are trying to separate compatibility problems from Wi-Fi problems and figure out what radio layer the house should really depend on.</p>
+        <p class='lede'>Most smart home pain starts with picking devices that do not fit the network, ecosystem, or control layer you already have.</p>
+        <p class='muted'>Use this section when you are trying to separate radio-layer decisions from hub decisions, ecosystem decisions, and Wi-Fi overload problems. The goal is not to memorize buzzwords. It is to buy gear that actually belongs in your house.</p>
+        <h2>Start with the right kind of question</h2>
         <div class='grid'>
-          <div class='card'><h3 style='margin-top:0'><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Zigbee vs Z-Wave vs Thread vs Matter</a></h3><p class='muted'>The real-world tradeoffs for reliability and mixed homes.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/protocols/matter-vs-zigbee/'>Matter vs Zigbee</a></h3><p class='muted'>Interoperability promise vs practical mesh maturity.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/protocols/thread-vs-zigbee/'>Thread vs Zigbee</a></h3><p class='muted'>Newer architecture versus battle-tested device depth.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/protocols/matter-vs-thread/'>Matter vs Thread</a></h3><p class='muted'>The architecture gap people confuse most often when buying newer gear.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Which protocol family is the best fit overall?</a></h3><p class='muted'>Use this when you need the broad architecture answer for a mixed or growing home.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/protocols/matter-vs-thread/'>Am I confusing Matter and Thread?</a></h3><p class='muted'>This is the most common modern smart-home terminology mistake.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/protocols/hub-vs-bridge-vs-controller-vs-border-router/'>Am I mixing up hub, bridge, controller, and border router?</a></h3><p class='muted'>Use this when terminology confusion is driving bad buying decisions.</p></div>
         </div>
+        <h2>Core protocol comparisons</h2>
+        <div class='grid'>
+          <div class='card'><h3 style='margin-top:0'><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>Zigbee vs Z-Wave vs Thread vs Matter</a></h3><p class='muted'>The real-world tradeoffs for reliability, mixed homes, and future flexibility.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/protocols/matter-vs-zigbee/'>Matter vs Zigbee</a></h3><p class='muted'>Interoperability promise versus practical mesh maturity.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/protocols/thread-vs-zigbee/'>Thread vs Zigbee</a></h3><p class='muted'>Newer architecture versus battle-tested device depth.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/protocols/matter-vs-thread/'>Matter vs Thread</a></h3><p class='muted'>The standard versus the transport layer, without the usual confusion.</p></div>
+        </div>
+        <h2>Where to go next</h2>
+        <ul>
+          <li><a href='/devices/do-i-need-a-smart-home-hub-if-i-already-have-alexa-google-home-or-homekit/'>If protocol choice is tangled up with Alexa, Google Home, or Apple Home, use the cross-ecosystem decision guide</a></li>
+          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>If the real issue is what should coordinate the house, move to hub strategy</a></li>
+          <li><a href='/products/reliable-smart-home-hubs/'>If you already know a hub purchase is justified, go to the curated shortlist</a></li>
+        </ul>
         """,
     },
     "/troubleshooting/": {
@@ -59,11 +72,25 @@ HUBS = {
         "description": "Choose a hub strategy that makes mixed smart homes simpler and more reliable.",
         "body": """
         <h1 style='margin-top:0'>Hubs and bridges</h1>
-        <p class='lede'>Use this section when the real problem is ecosystem sprawl, too many apps, or devices that only work well when a bridge or central hub is doing the coordination.</p>
-        <p class='muted'>A good hub strategy should reduce protocol chaos, improve local reliability, and keep your smart home from depending on a pile of fragile cloud handoffs.</p>
+        <p class='lede'>Use this section when the real problem is not one broken device, but the fact that the whole house no longer has a clean control strategy.</p>
+        <p class='muted'>A good hub strategy should reduce protocol chaos, improve local reliability, clarify what role Alexa or Google Home or Apple Home should play, and keep your smart home from depending on a pile of fragile cloud handoffs.</p>
+        <h2>Start with the architecture question</h2>
         <div class='grid'>
-          <div class='card'><h3 style='margin-top:0'><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></h3><p class='muted'>Start here if you want one cleaner control layer instead of stacking more vendor apps and bridges at random.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/hubs/best-hub-for-mixed-smart-home/'>Best hub for mixed smart home</a></h3><p class='muted'>Start here if you want one cleaner coordination layer instead of stacking more vendor apps and bridges at random.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></h3><p class='muted'>Use this if you are not yet sure the house has actually earned a dedicated hub.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/devices/do-i-need-a-smart-home-hub-if-i-already-have-alexa-google-home-or-homekit/'>Do I still need a hub if I already have Alexa, Google Home, or Apple Home?</a></h3><p class='muted'>Use this when ecosystem convenience is making the decision feel blurrier than it really is.</p></div>
         </div>
+        <h2>Ecosystem-specific hub confusion</h2>
+        <div class='grid'>
+          <div class='card'><h3 style='margin-top:0'><a href='/devices/is-alexa-a-smart-home-hub/'>Is Alexa a smart home hub?</a></h3><p class='muted'>Where Echo devices overlap with hub behavior and where they stop being enough.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/devices/is-google-home-a-smart-home-hub/'>Is Google Home a smart home hub?</a></h3><p class='muted'>What Nest and Google Home devices really do in a growing system.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/devices/is-apple-home-a-smart-home-hub/'>Is Apple Home a smart home hub?</a></h3><p class='muted'>How Apple Home, HomePod, and Apple TV fit into the same question.</p></div>
+        </div>
+        <h2>Terminology that helps before you buy</h2>
+        <ul>
+          <li><a href='/protocols/hub-vs-bridge-vs-controller-vs-border-router/'>Learn the difference between a real hub, a bridge, a controller, and a Thread border router</a></li>
+          <li><a href='/products/reliable-smart-home-hubs/'>Then compare the reliability-first shortlist of hub and hub-adjacent options</a></li>
+        </ul>
         """,
     },
     "/wifi-load/": {
@@ -87,11 +114,24 @@ HUBS = {
         "body": """
         <h1 style='margin-top:0'>Devices</h1>
         <p class='lede'>Use this section when you are deciding what kind of hardware belongs in the house, not just which app to tap next.</p>
-        <p class='muted'>The right device choice depends on protocol fit, hub strategy, and whether adding another Wi-Fi gadget will actually make the system less stable.</p>
-        <p class='muted'>This is the place to decide whether the fix is better architecture, a different device type, or no new hardware at all.</p>
+        <p class='muted'>The right device choice depends on protocol fit, hub strategy, ecosystem role, and whether adding another Wi-Fi gadget will actually make the system less stable. This is where you decide whether the fix is better architecture, a different device type, or no new hardware at all.</p>
+        <h2>Start with the architecture decision</h2>
         <div class='grid'>
-          <div class='card'><h3 style='margin-top:0'><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></h3><p class='muted'>Start here if you are trying to decide whether better architecture matters more than buying another standalone device.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/devices/do-i-need-a-smart-home-hub/'>Do I need a smart home hub?</a></h3><p class='muted'>Start here if you are deciding whether better architecture matters more than buying another standalone device.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/devices/do-i-need-a-smart-home-hub-if-i-already-have-alexa-google-home-or-homekit/'>Do I still need a hub if I already have Alexa, Google Home, or Apple Home?</a></h3><p class='muted'>Use this when you already have an ecosystem but are not sure whether it counts as enough.</p></div>
         </div>
+        <h2>Ecosystem device-role guides</h2>
+        <div class='grid'>
+          <div class='card'><h3 style='margin-top:0'><a href='/devices/is-alexa-a-smart-home-hub/'>Is Alexa a smart home hub?</a></h3><p class='muted'>Clarifies where Echo devices act like hub-adjacent gear and where they do not.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/devices/is-google-home-a-smart-home-hub/'>Is Google Home a smart home hub?</a></h3><p class='muted'>Explains what Nest and Google Home devices really do in a growing setup.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/devices/is-apple-home-a-smart-home-hub/'>Is Apple Home a smart home hub?</a></h3><p class='muted'>Explains the Apple Home app, Home hub roles, and where Apple gear is enough.</p></div>
+        </div>
+        <h2>Buying paths from here</h2>
+        <ul>
+          <li><a href='/products/reliable-smart-home-hubs/'>If the answer is “yes, I need a stronger control layer,” use the hub shortlist</a></li>
+          <li><a href='/products/reliable-smart-plugs/'>If the real need is a device-level replacement, use the plug shortlist</a></li>
+          <li><a href='/protocols/hub-vs-bridge-vs-controller-vs-border-router/'>If terminology is the thing blocking you, use the terminology guide first</a></li>
+        </ul>
         """,
     },
     "/products/": {
@@ -99,12 +139,19 @@ HUBS = {
         "description": "Curated product recommendations for reliability-first smart homes.",
         "body": """
         <h1 style='margin-top:0'>Products</h1>
-        <p class='lede'>This section is for the short list, not a giant gadget catalog. Use it after you understand whether your problem is really protocol fit, Wi-Fi load, or hub strategy.</p>
-        <p class='muted'>Every recommendation here is meant to support a more stable setup, not push you into buying more gear than the problem actually requires.</p>
+        <p class='lede'>This section should help you buy the right gear for the right layer of the problem, not dump you into a giant gadget catalog.</p>
+        <p class='muted'>The strongest product pages on this site should eventually cover more than just plugs and true hubs. They should include hub-adjacent ecosystem controllers, bridges, dimmers, doorbells, and compatibility framing where that actually improves decision quality. For now, use the current shortlist as the best-supported starting layer.</p>
+        <h2>Current best-supported buying paths</h2>
         <div class='grid'>
-          <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-home-hubs/'>Reliable smart home hubs</a></h3><p class='muted'>Best when the fix is a stronger control layer for a mixed-device home.</p></div>
-          <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-plugs/'>Reliable smart plugs</a></h3><p class='muted'>Best when you need a more trustworthy replacement or want to avoid more cheap Wi-Fi clutter.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-home-hubs/'>Reliable smart home hubs</a></h3><p class='muted'>Best when the fix is a stronger control layer for a mixed-device home, and when you need to understand true hubs versus ecosystem controllers.</p></div>
+          <div class='card'><h3 style='margin-top:0'><a href='/products/reliable-smart-plugs/'>Reliable smart plugs</a></h3><p class='muted'>Best when you need a more trustworthy replacement or want to avoid adding more cheap Wi-Fi clutter.</p></div>
         </div>
+        <h2>Use products only after the architecture is clear</h2>
+        <ul>
+          <li><a href='/devices/do-i-need-a-smart-home-hub-if-i-already-have-alexa-google-home-or-homekit/'>If you are deciding whether Alexa, Google Home, or Apple Home are enough, start there before you buy</a></li>
+          <li><a href='/protocols/hub-vs-bridge-vs-controller-vs-border-router/'>If you are mixing up hubs, bridges, controllers, and border routers, fix the terminology first</a></li>
+          <li><a href='/hubs/best-hub-for-mixed-smart-home/'>If you already know the house needs stronger coordination, go to the hub strategy guide</a></li>
+        </ul>
         """,
     },
 }

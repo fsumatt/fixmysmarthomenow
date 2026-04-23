@@ -5,18 +5,18 @@ from .shared import AFFILIATE_INLINE_DISCLOSURE, product_card
 PRODUCT_PAGES = {
     "/products/reliable-smart-home-hubs/": {
         "title": "Reliable smart home hubs",
-        "description": "A curated shortlist of smart home hub strategies and hub categories that prioritize reliability over hype.",
+        "description": "A curated shortlist of smart home hub strategies, real hubs, and hub-adjacent ecosystem controllers that prioritize reliability over hype.",
         "section": "Products",
         "body": (
-        "<p>This is not a giant hub catalog. It is the short list of hub categories worth considering if you care about stable mixed-device smart homes.</p>"
-        "<p class='muted'>Use this page after you have already decided that better control architecture, not more random gadgets, is the real answer.</p>"
-        "<h2>Recommended patterns</h2>"
+        "<p>This should not be a random hub catalog. It should help you buy the right kind of control layer for the actual problem in your house.</p>"
+        "<p class='muted'>That means separating <strong>true automation hubs</strong> from <strong>ecosystem controllers and hub-adjacent devices</strong> like Apple TV, HomePod, Echo devices, and other gear that can matter a lot without always being the main brain of the house.</p>"
+        "<h2>Start with the right pattern, not the right box</h2>"
         "<ul>"
-        "  <li><strong>Main automation hub + bridges:</strong> best overall for mixed homes.</li>"
-        "  <li><strong>Vendor hub only:</strong> fine if you stay narrow, risky if you want flexibility later.</li>"
-        "  <li><strong>Voice assistant only:</strong> acceptable for very small setups, weak for serious automation.</li>"
+        "  <li><strong>Main automation hub + a few bridges:</strong> best overall for mixed homes.</li>"
+        "  <li><strong>Vendor or ecosystem controller only:</strong> fine if you stay narrow, risky if the house keeps growing.</li>"
+        "  <li><strong>Voice assistant only:</strong> acceptable for very small setups, usually weak for serious automation.</li>"
         "</ul>"
-        "<h2>Best picks by scenario</h2>"
+        "<h2>True hubs for mixed homes</h2>"
         + AFFILIATE_INLINE_DISCLOSURE
         + "<div class='grid'>"
         + product_card(
@@ -53,17 +53,65 @@ PRODUCT_PAGES = {
             query="Hubitat Elevation hub",
         )
         + "</div>"
+        "<h2>Hub-adjacent ecosystem controllers that can still matter</h2>"
+        "<p>These are not always the right answer to a whole-house coordination problem, but they absolutely belong in the buying conversation because they shape what Apple Home, Alexa, and Google Home can really do.</p>"
+        + "<div class='grid'>"
+        + product_card(
+            title="Apple TV 4K",
+            best_for="Apple-heavy homes that want a stronger Apple Home experience and better Home hub behavior",
+            why=[
+                "Useful when the home is strongly Apple-shaped",
+                "Can matter a lot for Apple Home responsiveness and remote access behavior",
+                "Better thought of as Apple ecosystem infrastructure than as a universal mixed-home hub",
+            ],
+            caution="Still not automatically the best main automation brain for a mixed smart home.",
+            query="Apple TV 4K",
+        )
+        + product_card(
+            title="HomePod mini",
+            best_for="buyers who want Apple Home convenience and Thread-border-router-style ecosystem support in smaller Apple homes",
+            why=[
+                "Good fit when Apple Home is the main user-facing experience",
+                "Useful for voice control plus Apple ecosystem smart-home roles",
+                "Helps more as Apple-home infrastructure than as a full mixed-home hub replacement",
+            ],
+            caution="Best when the house is still relatively Apple-shaped.",
+            query="HomePod mini",
+        )
+        + product_card(
+            title="Echo (4th Gen)",
+            best_for="Alexa-heavy homes where Echo is part of the control layer and ecosystem support story",
+            why=[
+                "Useful when Alexa is the main convenience layer",
+                "Can matter for newer Alexa ecosystem smart-home roles",
+                "Best understood as hub-adjacent control infrastructure, not always the whole answer",
+            ],
+            caution="Still usually not the best long-term main coordination layer for a mixed home by itself.",
+            query="Echo 4th generation",
+        )
+        + "</div>"
+        "<h2>What is missing today, and where this page should grow</h2>"
+        "<p>The site should eventually add stronger product coverage for:</p>"
+        "<ul>"
+        "  <li>smart dimmers and switches</li>"
+        "  <li>doorbells and ecosystem-specific video entry gear</li>"
+        "  <li>bridge-dependent device families</li>"
+        "  <li>compatibility tables showing which hub or ecosystem handles which gear well</li>"
+        "  <li>infographics that explain true hub vs ecosystem controller vs bridge roles</li>"
+        "</ul>"
+        "<p>Those expansions are worth doing because they support better buying decisions, not because the site needs a bloated catalog.</p>"
         "<h2>How to choose</h2>"
         "<ul>"
-        "  <li>Buy for the protocols you actually need, not abstract future-proofing.</li>"
+        "  <li>Buy for the protocols and ecosystem roles you actually need, not abstract future-proofing.</li>"
         "  <li>Prefer local-control options if your setup already feels fragile.</li>"
-        "  <li>Do not add a vendor-specific hub unless you are comfortable staying narrower.</li>"
+        "  <li>Do not assume Apple TV, HomePod, Echo, or Nest hardware automatically replace a real mixed-home hub.</li>"
+        "  <li>Use ecosystem infrastructure when the house is still narrow, and a true hub when the house has become a real coordination problem.</li>"
         "</ul>"
         "<h2>Next steps</h2>"
         "<ul>"
         "  <li><a href='/hubs/best-hub-for-mixed-smart-home/'>If you still are comparing architectures, start with the best hub strategy guide</a></li>"
-        "  <li><a href='/protocols/zigbee-vs-z-wave-vs-thread-vs-matter/'>If protocol fit is still unclear, compare the main options first</a></li>"
-        "  <li><a href='/devices/do-i-need-a-smart-home-hub/'>If you are not sure a hub belongs in the setup, decide that before buying</a></li>"
+        "  <li><a href='/devices/do-i-need-a-smart-home-hub-if-i-already-have-alexa-google-home-or-homekit/'>If the real question is whether your current ecosystem is already enough, use the cross-ecosystem decision guide</a></li>"
+        "  <li><a href='/protocols/hub-vs-bridge-vs-controller-vs-border-router/'>If terminology confusion is muddying the buying decision, clean that up first</a></li>"
         "</ul>"
         ),
     },
