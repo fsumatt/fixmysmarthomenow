@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+tools/__pycache__/
+tools/build_pages/__pycache__/
+
+# Generated monitor artifacts
+data/monitor_snapshots.jsonl
+reports/fmsmn_priorities.md
+
+# One-off local audit artifact
+reports/site_flow_cohesion_audit_2026-04-21.md
