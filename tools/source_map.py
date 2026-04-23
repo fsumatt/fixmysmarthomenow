@@ -26,6 +26,7 @@ MAP: dict[str, dict[str, object]] = {
     "/protocols/matter-vs-thread/": {"source": "tools/build_pages/protocols.py", "type": "generator-page", "markers": ["Matter and Thread are not competitors", "cross-platform compatibility"]},
     "/protocols/matter-vs-zigbee/": {"source": "tools/build_pages/protocols.py", "type": "generator-page", "markers": ["Zigbee is still better", "interoperability layer"]},
     "/protocols/thread-vs-zigbee/": {"source": "tools/build_pages/protocols.py", "type": "generator-page", "markers": ["Thread is elegant and modern", "battle-tested"]},
+    "/protocols/hub-vs-bridge-vs-controller-vs-border-router/": {"source": "tools/build_pages/protocols.py", "type": "generator-page", "markers": ["Hub, bridge, controller, and border router are not interchangeable terms", "ecosystem on top, real hub underneath"]},
     "/wifi-load/how-many-devices-can-wifi-handle-smart-home/": {"source": "tools/build_pages/wifi_load.py", "type": "generator-page", "markers": ["There is no single device limit", "router is overloaded"]},
     "/wifi-load/2-4ghz-smart-home-best-practices/": {"source": "tools/build_pages/wifi_load.py", "type": "generator-page", "markers": ["bad 2.4 GHz policy", "dedicated 2.4 GHz IoT SSID"]},
     "/wifi-load/too-many-smart-devices-on-wifi/": {"source": "tools/build_pages/wifi_load.py", "type": "generator-page", "markers": ["too many smart devices on Wi-Fi", "all-Wi-Fi strategy"]},

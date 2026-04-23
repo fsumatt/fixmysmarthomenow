@@ -129,8 +129,114 @@ PROTOCOL_PAGES = {
         + "</div>"
         "<h2>Next steps</h2>"
         "<ul>"
+        "  <li><a href='/protocols/hub-vs-bridge-vs-controller-vs-border-router/'>If the terms themselves are the real problem, start with the terminology guide</a></li>"
         "  <li><a href='/hubs/best-hub-for-mixed-smart-home/'>If protocol sprawl is the real issue, pick a better hub strategy</a></li>"
         "  <li><a href='/devices/do-i-need-a-smart-home-hub/'>If you still are not sure a hub belongs here, decide that first</a></li>"
+        "</ul>"
+        ),
+    },
+    "/protocols/hub-vs-bridge-vs-controller-vs-border-router/": {
+        "title": "Hub vs bridge vs controller vs border router",
+        "description": "What hub, bridge, controller, and Thread border router actually mean, where they overlap, and which one you really need in a smart home.",
+        "section": "Protocols",
+        "body": (
+        "<p><strong>Hub, bridge, controller, and border router are not interchangeable terms, even though smart home marketing and forum advice treat them like they are.</strong> If you mix them up, you end up buying the wrong gear, blaming the wrong layer, and building a house that feels more mysterious than it should.</p>"
+        "<h2>Why these terms get mixed up so easily</h2>"
+        "<p>Smart homes have too many overlapping roles. One device can be a speaker, a Matter controller, and a Thread border router. Another can be called a hub even though it mostly behaves like a bridge. Another can feel like the center of the house because it is where you tap buttons, even if it is not the place where the real coordination logic should live.</p>"
+        "<p>That overlap is why people ask questions like “Is Alexa a hub?” or “Do I already have a hub if I own a HomePod?” Those are reasonable questions. The problem is that the right answer depends on which job you actually mean.</p>"
+        "<h2>What a hub is</h2>"
+        "<p>In practical smart-home terms, a <strong>hub</strong> is the main coordination layer. It is the place that owns device relationships, automations, protocol strategy, and long-term control more seriously than a thin app-only setup does.</p>"
+        "<p>A real hub matters most once the house becomes a mixed system rather than just a few gadgets. That is why hubs become more valuable as the home grows more complex.</p>"
+        "<ul>"
+        "  <li>A hub is about <strong>coordination</strong>.</li>"
+        "  <li>A hub is often where automations become more reliable and more structured.</li>"
+        "  <li>A hub is what you add when the house has outgrown being managed only through vendor apps and voice routines.</li>"
+        "</ul>"
+        "<h2>What a bridge is</h2>"
+        "<p>A <strong>bridge</strong> is usually a translator or protocol-specific middle layer. It helps one family of devices show up inside another system, but it is not always the best candidate to become the whole house’s central brain.</p>"
+        "<p>Bridges are common because many device ecosystems were designed to solve their own compatibility problem first, not your whole-home architecture problem.</p>"
+        "<ul>"
+        "  <li>A bridge is about <strong>translation</strong>.</li>"
+        "  <li>It often exists so one vendor’s devices can surface inside a broader ecosystem.</li>"
+        "  <li>You can have several bridges in one house without any of them being the real central hub.</li>"
+        "</ul>"
+        "<h2>What a controller is</h2>"
+        "<p>A <strong>controller</strong> is a broader term, which is why it causes so much confusion. Sometimes it means the thing issuing commands. In Matter discussions, it often means the <strong>Matter controller</strong>, the role that commissions devices and helps manage them inside an ecosystem.</p>"
+        "<p>That matters because a controller role can be important without automatically solving every other smart-home problem. A Matter controller is useful, but useful is not the same thing as being your ideal whole-house hub strategy.</p>"
+        "<ul>"
+        "  <li>A controller is about <strong>management and command authority</strong>.</li>"
+        "  <li>A Matter controller helps with device onboarding and ecosystem-level control.</li>"
+        "  <li>It may be part of a strong setup without being the whole answer by itself.</li>"
+        "</ul>"
+        "<h2>What a Thread border router is</h2>"
+        "<p>A <strong>Thread border router</strong> connects a Thread mesh to the rest of your network. It is important, but it solves a different layer of the problem than a hub does.</p>"
+        "<p>This is one of the most common modern points of confusion. People hear that a device is a Thread border router and assume that means it is now the smart-home brain. Usually it just means it is handling one important networking role in a larger architecture.</p>"
+        "<ul>"
+        "  <li>A border router is about <strong>network transport between Thread and your wider network</strong>.</li>"
+        "  <li>It helps Thread devices communicate more usefully.</li>"
+        "  <li>It does not automatically replace a central coordination layer.</li>"
+        "</ul>"
+        "<h2>Where voice assistants fit</h2>"
+        "<p>Alexa, Google Home, and Apple Home all make this harder because they can overlap with several of these roles at once. They can be the visible control surface, participate in controller-like behavior, and sometimes participate in newer network roles too.</p>"
+        "<p>But the key distinction still holds: a device can help with smart-home control without being the best answer to the question “What should really coordinate this house?” That is why many better setups become <strong>ecosystem on top, real hub underneath</strong>.</p>"
+        "<h2>Real-world examples</h2>"
+        "<ul>"
+        "  <li><strong>Home Assistant Green or Hubitat:</strong> usually thought of as true hubs because they are trying to own the broader coordination problem.</li>"
+        "  <li><strong>Philips Hue Bridge:</strong> classic example of a bridge that is very useful without necessarily being the ideal whole-home core.</li>"
+        "  <li><strong>HomePod, Apple TV, Echo, or Nest devices:</strong> may take on controller or border-router-like roles, but that does not automatically make them the strongest central architecture answer for every home.</li>"
+        "</ul>"
+        "<h2>Which problem each one solves</h2>"
+        "<p>If you are confused about what to buy, this is the practical shortcut:</p>"
+        "<ul>"
+        "  <li>If your problem is <strong>whole-home coordination</strong>, you are probably thinking about a hub.</li>"
+        "  <li>If your problem is <strong>making one family of devices show up somewhere else</strong>, you are probably thinking about a bridge.</li>"
+        "  <li>If your problem is <strong>who commissions and manages Matter devices</strong>, you are thinking about a controller.</li>"
+        "  <li>If your problem is <strong>how Thread devices reach the rest of the network</strong>, you are thinking about a border router.</li>"
+        "</ul>"
+        "<h2>How to tell what you actually need</h2>"
+        "<p>Do not start by asking which box sounds most advanced. Start by asking which layer is actually failing.</p>"
+        "<ul>"
+        "  <li>If devices are visible but coordination is messy, you may need a better hub.</li>"
+        "  <li>If one vendor family is isolated, you may need a bridge.</li>"
+        "  <li>If Matter onboarding is the problem, you may be missing the right controller path.</li>"
+        "  <li>If Thread devices are unstable or unreachable, you may need to think about border-router quality and placement.</li>"
+        "</ul>"
+        "<p>That is the bigger lesson here: these roles overlap, but they are not substitutes for one another. Once you separate them, smart-home decisions get much easier.</p>"
+        "<h2>When buying a real hub is actually justified</h2>"
+        "<p>If this terminology cleanup makes one thing clearer, it should be this: the word <em>hub</em> should be earned. You buy a real hub when the house has a real coordination problem, not just because a page about terminology made a new box sound attractive.</p>"
+        + AFFILIATE_INLINE_DISCLOSURE
+        + "<div class='grid'>"
+        + product_card(
+            title="Home Assistant Green",
+            best_for="homes that have moved past terminology confusion into a real need for one serious coordination layer",
+            why=[
+                "Good fit when the house needs a real hub, not just another bridge or app layer",
+                "Useful when multiple ecosystems and protocols now need one cleaner architecture",
+                "Strong long-term answer for buyers who have outgrown app-only control",
+            ],
+            caution="More system than you need if your home is still simple and healthy.",
+            query="Home Assistant Green",
+            button_label="See hub option on Amazon ↗",
+        )
+        + product_card(
+            title="Hubitat Elevation",
+            best_for="buyers who want a dedicated hub after realizing controllers, bridges, and border routers are not the same thing",
+            why=[
+                "Good middle ground when the real missing piece is a stronger coordination layer",
+                "Helps mixed homes move beyond vendor-app sprawl",
+                "Makes sense when you want a deliberate hub without overcomplicating the whole house",
+            ],
+            caution="Still should solve a real architecture problem, not just satisfy curiosity.",
+            query="Hubitat Elevation hub",
+            button_label="See hub option on Amazon ↗",
+        )
+        + "</div>"
+        "<h2>Next steps</h2>"
+        "<ul>"
+        "  <li><a href='/devices/do-i-need-a-smart-home-hub/'>If you are still deciding whether you need a hub at all, use the broader hub decision page</a></li>"
+        "  <li><a href='/devices/do-i-need-a-smart-home-hub-if-i-already-have-alexa-google-home-or-homekit/'>If your confusion started with Alexa, Google Home, or Apple Home, use the cross-ecosystem decision guide</a></li>"
+        "  <li><a href='/protocols/matter-vs-thread/'>If the real confusion is Matter versus Thread, compare those directly</a></li>"
+        "  <li><a href='/hubs/best-hub-for-mixed-smart-home/'>If you already know the house needs stronger coordination, compare the best hub strategy</a></li>"
         "</ul>"
         ),
     },
