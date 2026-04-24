@@ -37,6 +37,7 @@ MAP: dict[str, dict[str, object]] = {
     "/devices/is-apple-home-a-smart-home-hub/": {"source": "tools/build_pages/devices.py", "type": "generator-page", "markers": ["Apple Home can be part of a smart home hub strategy", "experience layer"]},
     "/devices/do-i-need-a-smart-home-hub-if-i-already-have-alexa-google-home-or-homekit/": {"source": "tools/build_pages/devices.py", "type": "generator-page", "markers": ["Having Alexa, Google Home, or Apple Home does not automatically mean", "real hub underneath, ecosystem on top"]},
     "/products/reliable-smart-home-hubs/": {"source": "tools/build_pages/products.py", "type": "generator-page", "markers": ["short list of hub categories", "local control options"]},
+    "/hubs/do-i-need-more-than-one-smart-home-hub/": {"source": "tools/build_pages/hubs.py", "type": "generator-page", "markers": ["Usually, no.", "one main hub plus only the bridges or ecosystem pieces that are actually necessary"]},
     "/products/reliable-smart-plugs/": {"source": "tools/build_pages/products.py", "type": "generator-page", "markers": ["Reliable smart plugs", "protocol fit"]},
     "/products/reliable-smart-dimmers-and-switches/": {"source": "tools/build_pages/products.py", "type": "generator-page", "markers": ["Smart dimmers and switches are often a better long-term answer", "Fast compatibility guide"]},
     "/hubs/best-hub-for-mixed-smart-home/": {"source": "tools/build_pages/hubs.py", "type": "generator-page", "markers": ["mixed smart home", "One main hub + a few bridges"]},
